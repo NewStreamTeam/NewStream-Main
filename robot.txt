@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://newstreamteam.github.io/NewStream-Main/sitemap.xml
