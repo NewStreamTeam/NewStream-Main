@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/i18next/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans overflow-x-hidden">
 
@@ -176,138 +177,145 @@
 
 <script>
   // i18next initialization
-  i18next.init({
-    lng: 'en', // default language set to English
-    debug: true,
-    resources: {
-      fr: {
-        translation: {
-          hero: {
-            title: "NewStream : le streaming propre",
-            description: "Votre alternative éthique : un site open-source, gratuit et sans les algorithmes toxiques. Partagez, regardez, et protégez-vous des contenus indésirables grâce à notre extension révolutionnaire. <br class=\"hidden md:block\">",
-            call_to_action: "Votre participation est cruciale !",
-            discover_platform_button: "Découvrir la plateforme",
-            install_extension_button: "Installer l'extension",
-            contribute_button: "Contribuer"
-          },
-          problems: {
-            title: "Les pièges des plateformes actuelles",
-            bubble_title: "Bulles algorithmiques & contenu addictif",
-            bubble_description: "Les algorithmes nous enferment dans des bulles de contenu, favorisant l'addiction et limitant l'exposition à des perspectives diverses.",
-            disinformation_title: "Désinformation rampante",
-            disinformation_description: "Sans contrôle éthique, les plateformes deviennent des foyers pour la désinformation, nuisant à une compréhension saine du monde.",
-            toxicity_title: "Toxicité généralisée",
-            toxicity_description: "Les espaces de discussion se transforment souvent en environnements toxiques, impactant négativement le bien-être des utilisateurs."
-          },
-          solutions: {
-            title: "NewStream : Nos solutions pour un web sain",
-            opensource_title: "Site web open-source",
-            opensource_description: "Regardez des vidéos YouTube, uploadez les vôtres, le tout sans publicité, sans traçage et sans les algorithmes intrusifs des grandes plateformes.",
-            extension_title: "Extension anti-formats courts",
-            extension_description: "Dites adieu aux contenus addictifs ! Notre extension bloque efficacement les Shorts YouTube, les Reels Instagram, et tous les formats verticaux conçus pour la rétention rapide.",
-            quality_gauge_title: "Jauge de qualité communautaire",
-            quality_gauge_description: "Oubliez les likes et dislikes simplistes. Notre système de vote intelligent et nuancé, alimenté par la communauté, évalue la véritable valeur du contenu.",
-            donations_title: "Plateforme financée par les dons",
-            donations_description: "100 % transparent et éthique : pas de pub, pas de collecte de données. NewStream est financé uniquement par votre soutien généreux, garantissant notre indépendance."
-          },
-          extension_section: {
-            title: "Découvrez l'Extension Navigateur NewStream",
-            description: "Dites adieu aux formats courts inutiles et aux distractions. Notre extension bloque intelligemment les contenus verticaux et addictifs sur vos plateformes favorites.",
-            image_caption: "Aperçu : L'extension en action sur une page vidéo.",
-            shield_title: "Votre bouclier contre la surcharge d'information",
-            feature1: "Bloque les Shorts YouTube, Reels Instagram, TikToks.",
-            feature2: "Améliore votre concentration et réduit le temps d'écran passif.",
-            feature3: "Personnalisable pour s'adapter à vos préférences.",
-            download_button: "Télécharger l’extension maintenant !"
-          },
-          contribute_section: {
-            title: "Votre aide est essentielle : Rejoignez la communauté NewStream !",
-            description: "NewStream est un projet 100 % open-source et collaboratif, qui existe grâce à l'engagement de ses utilisateurs. Votre implication est essentielle pour faire grandir cette vision d'un web plus sain et éthique.",
-            call_to_action: "Nous avons besoin de vous pour continuer !",
-            github_button: "Voir sur GitHub",
-            discord_button: "Rejoindre Discord",
-            donate_button: "Faire un don"
-          },
-          footer: {
-            text: "© 2025 NewStream. Un projet communautaire, libre et éthique pour un internet meilleur."
-          },
-          language_button: {
-            english: "English",
-            french: "Français"
-          }
-        }
+  i18next
+    .use(i18nextBrowserLanguageDetector) // Use the language detector plugin
+    .init({
+      fallbackLng: 'en', // Fallback language if browser language is not supported
+      debug: true,
+      detection: {
+        order: ['navigator', 'htmlTag', 'cookie', 'localStorage'], // Order of detection methods
+        caches: ['localStorage', 'cookie'], // Cache detected language in localStorage and cookie
       },
-      en: {
-        translation: {
-          hero: {
-            title: "NewStream: Clean Streaming",
-            description: "Your ethical alternative: an open-source, free site without toxic algorithms. Share, watch, and protect yourself from unwanted content with our revolutionary extension. <br class=\"hidden md:block\">",
-            call_to_action: "Your participation is crucial!",
-            discover_platform_button: "Discover the Platform",
-            install_extension_button: "Install the Extension",
-            contribute_button: "Contribute"
-          },
-          problems: {
-            title: "The Pitfalls of Current Platforms",
-            bubble_title: "Algorithmic Bubbles & Addictive Content",
-            bubble_description: "Algorithms trap us in content bubbles, fostering addiction and limiting exposure to diverse perspectives.",
-            disinformation_title: "Rampant Disinformation",
-            disinformation_description: "Without ethical control, platforms become breeding grounds for disinformation, harming a healthy understanding of the world.",
-            toxicity_title: "Widespread Toxicity",
-            toxicity_description: "Discussion spaces often turn into toxic environments, negatively impacting user well-being."
-          },
-          solutions: {
-            title: "NewStream: Our Solutions for a Healthy Web",
-            opensource_title: "Open-Source Website",
-            opensource_description: "Watch YouTube videos, upload your own, all without ads, tracking, or the intrusive algorithms of major platforms.",
-            extension_title: "Anti-Vertical-content Extension",
-            extension_description: "Say goodbye to addictive content! Our extension effectively blocks YouTube Shorts, Instagram Reels, and all vertical formats designed for quick retention.",
-            quality_gauge_title: "Community Quality Gauge",
-            quality_gauge_description: "Forget simplistic likes and dislikes. Our intelligent and nuanced voting system, powered by the community, evaluates the true value of content.",
-            donations_title: "Donation-Funded Platform",
-            donations_description: "100% transparent and ethical: no ads, no data collection. NewStream is funded solely by your generous support, guaranteeing our independence."
-          },
-          extension_section: {
-            title: "Discover the NewStream Browser Extension",
-            description: "Say goodbye to unnecessary short-form content and distractions. Our extension intelligently blocks vertical and addictive content on your favorite platforms.",
-            image_caption: "Preview: The extension in action on a video page.",
-            shield_title: "Your Shield Against Information Overload",
-            feature1: "Blocks YouTube Shorts, Instagram Reels, TikToks.",
-            feature2: "Improves your concentration and reduces passive screen time.",
-            feature3: "Customizable to suit your preferences.",
-            download_button: "Download the Extension Now!"
-          },
-          contribute_section: {
-            title: "Your Help is Essential: Join the NewStream Community!",
-            description: "NewStream is a 100% open-source and collaborative project, existing thanks to the commitment of its users. Your involvement is essential to grow this vision of a healthier and ethical web.",
-            call_to_action: "We need you to continue!",
-            github_button: "View on GitHub",
-            discord_button: "Join Discord",
-            donate_button: "Make a Donation"
-          },
-          footer: {
-            text: "© 2025 NewStream. A community-driven, free, and ethical project for a better internet."
-          },
-          language_button: {
-            english: "English",
-            french: "Français"
+      supportedLngs: ['fr', 'en'], // List of languages your application supports
+      resources: {
+        fr: {
+          translation: {
+            hero: {
+              title: "NewStream : le streaming propre",
+              description: "Votre alternative éthique : un site open-source, gratuit et sans les algorithmes toxiques. Partagez, regardez, et protégez-vous des contenus indésirables grâce à notre extension révolutionnaire. <br class=\"hidden md:block\">",
+              call_to_action: "Votre participation est cruciale !",
+              discover_platform_button: "Découvrir la plateforme",
+              install_extension_button: "Installer l'extension",
+              contribute_button: "Contribuer"
+            },
+            problems: {
+              title: "Les pièges des plateformes actuelles",
+              bubble_title: "Bulles algorithmiques & contenu addictif",
+              bubble_description: "Les algorithmes nous enferment dans des bulles de contenu, favorisant l'addiction et limitant l'exposition à des perspectives diverses.",
+              disinformation_title: "Désinformation rampante",
+              disinformation_description: "Sans contrôle éthique, les plateformes deviennent des foyers pour la désinformation, nuisant à une compréhension saine du monde.",
+              toxicity_title: "Toxicité généralisée",
+              toxicity_description: "Les espaces de discussion se transforment souvent en environnements toxiques, impactant négativement le bien-être des utilisateurs."
+            },
+            solutions: {
+              title: "NewStream : Nos solutions pour un web sain",
+              opensource_title: "Site web open-source",
+              opensource_description: "Regardez des vidéos YouTube, uploadez les vôtres, le tout sans publicité, sans traçage et sans les algorithmes intrusifs des grandes plateformes.",
+              extension_title: "Extension anti-formats courts",
+              extension_description: "Dites adieu aux contenus addictifs ! Notre extension bloque efficacement les Shorts YouTube, les Reels Instagram, et tous les formats verticaux conçus pour la rétention rapide.",
+              quality_gauge_title: "Jauge de qualité communautaire",
+              quality_gauge_description: "Oubliez les likes et dislikes simplistes. Notre système de vote intelligent et nuancé, alimenté par la communauté, évalue la véritable valeur du contenu.",
+              donations_title: "Plateforme financée par les dons",
+              donations_description: "100 % transparent et éthique : pas de pub, pas de collecte de données. NewStream est financé uniquement par votre soutien généreux, garantissant notre indépendance."
+            },
+            extension_section: {
+              title: "Découvrez l'Extension Navigateur NewStream",
+              description: "Dites adieu aux formats courts inutiles et aux distractions. Notre extension bloque intelligemment les contenus verticaux et addictifs sur vos plateformes favorites.",
+              image_caption: "Aperçu : L'extension en action sur une page vidéo.",
+              shield_title: "Votre bouclier contre la surcharge d'information",
+              feature1: "Bloque les Shorts YouTube, Reels Instagram, TikToks.",
+              feature2: "Améliore votre concentration et réduit le temps d'écran passif.",
+              feature3: "Personnalisable pour s'adapter à vos préférences.",
+              download_button: "Télécharger l’extension maintenant !"
+            },
+            contribute_section: {
+              title: "Votre aide est essentielle : Rejoignez la communauté NewStream !",
+              description: "NewStream est un projet 100 % open-source et collaboratif, qui existe grâce à l'engagement de ses utilisateurs. Votre implication est essentielle pour faire grandir cette vision d'un web plus sain et éthique.",
+              call_to_action: "Nous avons besoin de vous pour continuer !",
+              github_button: "Voir sur GitHub",
+              discord_button: "Rejoindre Discord",
+              donate_button: "Faire un don"
+            },
+            footer: {
+              text: "© 2025 NewStream. Un projet communautaire, libre et éthique pour un internet meilleur."
+            },
+            language_button: {
+              english: "English",
+              french: "Français"
+            }
+          }
+        },
+        en: {
+          translation: {
+            hero: {
+              title: "NewStream: Clean Streaming",
+              description: "Your ethical alternative: an open-source, free site without toxic algorithms. Share, watch, and protect yourself from unwanted content with our revolutionary extension. <br class=\"hidden md:block\">",
+              call_to_action: "Your participation is crucial!",
+              discover_platform_button: "Discover the Platform",
+              install_extension_button: "Install the Extension",
+              contribute_button: "Contribute"
+            },
+            problems: {
+              title: "The Pitfalls of Current Platforms",
+              bubble_title: "Algorithmic Bubbles & Addictive Content",
+              bubble_description: "Algorithms trap us in content bubbles, fostering addiction and limiting exposure to diverse perspectives.",
+              disinformation_title: "Rampant Disinformation",
+              disinformation_description: "Without ethical control, platforms become breeding grounds for disinformation, harming a healthy understanding of the world.",
+              toxicity_title: "Widespread Toxicity",
+              toxicity_description: "Discussion spaces often turn into toxic environments, negatively impacting user well-being."
+            },
+            solutions: {
+              title: "NewStream: Our Solutions for a Healthy Web",
+              opensource_title: "Open-Source Website",
+              opensource_description: "Watch YouTube videos, upload your own, all without ads, tracking, or the intrusive algorithms of major platforms.",
+              extension_title: "Anti-Short-Form Extension",
+              extension_description: "Say goodbye to addictive content! Our extension effectively blocks YouTube Shorts, Instagram Reels, and all vertical formats designed for quick retention.",
+              quality_gauge_title: "Community Quality Gauge",
+              quality_gauge_description: "Forget simplistic likes and dislikes. Our intelligent and nuanced voting system, powered by the community, evaluates the true value of content.",
+              donations_title: "Donation-Funded Platform",
+              donations_description: "100% transparent and ethical: no ads, no data collection. NewStream is funded solely by your generous support, guaranteeing our independence."
+            },
+            extension_section: {
+              title: "Discover the NewStream Browser Extension",
+              description: "Say goodbye to unnecessary short-form content and distractions. Our extension intelligently blocks vertical and addictive content on your favorite platforms.",
+              image_caption: "Preview: The extension in action on a video page.",
+              shield_title: "Your Shield Against Information Overload",
+              feature1: "Bloque les Shorts YouTube, Reels Instagram, TikToks.",
+              feature2: "Améliore votre concentration et réduit le temps d'écran passif.",
+              feature3: "Personnalisable pour s'adapter à vos préférences.",
+              download_button: "Download the Extension Now!"
+            },
+            contribute_section: {
+              title: "Your Help is Essential: Join the NewStream Community!",
+              description: "NewStream is a 100% open-source and collaborative project, existing thanks to the commitment of its users. Your involvement is essential to grow this vision of a healthier and ethical web.",
+              call_to_action: "We need you to continue!",
+              github_button: "View on GitHub",
+              discord_button: "Join Discord",
+              donate_button: "Make a Donation"
+            },
+            footer: {
+              text: "© 2025 NewStream. A community-driven, free, and ethical project for a better internet."
+            },
+            language_button: {
+              english: "English",
+              french: "Français"
+            }
           }
         }
       }
-    }
-  }, function(err, t) {
-    // init callbacks
-    updateContent();
-  });
+    }, function(err, t) {
+      // init callbacks
+      updateContent();
+    });
 
   function updateContent() {
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
       element.innerHTML = i18next.t(key);
     });
-    // Update the language switcher button text
+    // Update the language switcher button text based on current language
     const langSwitcher = document.getElementById('language-switcher');
-    if (i18next.language === 'fr') {
+    if (i18next.language.startsWith('fr')) { // Check if current language starts with 'fr'
       langSwitcher.textContent = i18next.t('language_button.english');
     } else {
       langSwitcher.textContent = i18next.t('language_button.french');
@@ -316,7 +324,7 @@
 
   document.getElementById('language-switcher').addEventListener('click', function() {
     const currentLang = i18next.language;
-    const newLang = currentLang === 'fr' ? 'en' : 'fr';
+    const newLang = currentLang.startsWith('fr') ? 'en' : 'fr'; // Toggle between 'fr' and 'en'
     i18next.changeLanguage(newLang, (err, t) => {
       if (err) return console.log('something went wrong loading', err);
       updateContent();
