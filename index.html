@@ -140,7 +140,8 @@
           <li data-i18n="extension_section.feature2">Améliore votre concentration et réduit le temps d'écran passif.</li>
           <li data-i18n="extension_section.feature3">Personnalisable pour s'adapter à vos préférences.</li>
         </ul>
-        <a href="#" class="px-8 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-pulse" data-i18n="extension_section.download_button">Télécharger l’extension maintenant !</a>
+        <a id="download-extension-btn" href="#" class="px-8 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-pulse" data-i18n="extension_section.download_button" download>Télécharger l’extension maintenant !</a>
+
       </div>
     </div>
   </section>
@@ -432,6 +433,30 @@ document.getElementById('language-switcher').addEventListener('click', function(
     bubble.style.animationDuration = `${10 + Math.random() * 20}s`;
     document.body.appendChild(bubble);
   }
+  document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('download-extension-btn');
+  const ua = navigator.userAgent;
+  let downloadUrl;
+
+  // zips
+  const chromeZip = '/downloads/openstream-chrome.zip';
+  const firefoxZip = '/downloads/openstream-firefox.zip';
+
+  // Détection basique
+  if (/Firefox\//.test(ua)) {
+    downloadUrl = firefoxZip;
+  } else if (/Chrome\//.test(ua) && !/Edg\//.test(ua)) {
+    downloadUrl = chromeZip;
+  } else if (/Edg\//.test(ua)) {
+    // Edge (Chromium)
+    downloadUrl = chromeZip;
+  } else {
+    // Par défaut on propose Chrome
+    downloadUrl = chromeZip;
+  }
+
+  btn.href = downloadUrl;
+});
 </script>
 </body>
 </html>
