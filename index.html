@@ -1,462 +1,218 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OpenStream - Plateforme vidéo éthique</title>
-  <meta name="description" content="OpenStream : une plateforme communautaire pour bâtir un internet meilleur.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://OpenStreamteam.github.io/OpenStream-Main/">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/i18next/i18next.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairPlay - Relevant and entertaining content, without compromise.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="description" content="Discover FairPlay: your new destination for relevant, captivating, ad-free, 100% free, and community-driven videos. Redefining streaming with quality and ethics.">
+    <meta name="keywords" content="FairPlay, free videos, no ads, open source streaming, community-driven content, quality videos, ethical streaming, browser extension, content moderation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/index.html"> <meta property="og:title" content="FairPlay - Content that Matters.">
+    <meta property="og:description" content="Your new destination for relevant and captivating videos, ad-free, 100% free, and driven by a passionate community. Discover FairPlay!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/index.html"> <meta property="og:image" content="https://yourwebsite.com/images/fairplay-social-share.jpg"> <meta property="og:image:alt" content="FairPlay logo and a video player example">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@StreamNew90503"> <meta name="twitter:title" content="FairPlay - Content that Matters.">
+    <meta name="twitter:description" content="Your new destination for relevant and captivating videos, ad-free, 100% free, and driven by a passionate community. Discover FairPlay!">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/fairplay-social-share.jpg"> <link rel="alternate" href="https://yourwebsite.com/fr/index.html" hreflang="fr-FR" />
+    <link rel="alternate" href="https://yourwebsite.com/index.html" hreflang="en-US" />
+    <link rel="alternate" href="https://yourwebsite.com/index.html" hreflang="x-default" />
+
 </head>
-<body class="bg-gray-900 text-white font-sans overflow-x-hidden">
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <a href="#" class="logo">FairPlay</a>
+            <button class="hamburger-menu" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Our Values</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#extension">Extension</a></li>
+                    <li><a href="#development">Development</a></li>
+                    <li><a href="https://ko-fi.com/openstream" class="btn-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="absolute top-4 right-4 z-50">
-    <button id="language-switcher" class="px-4 py-2 bg-gray-700 text-white rounded-xl hover:bg-gray-600 transition-all duration-300">
-      Français
-    </button>
-  </div>
-
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(circle at center, rgba(34,197,94,0.1) 0%, transparent 70%), radial-gradient(circle at top right, rgba(59,130,246,0.1) 0%, transparent 70%);"></div>
-    <div class="relative z-10">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 animated-gradient drop-shadow-lg" data-i18n="hero.title">
-        OpenStream : le streaming propre
-      </h1>
-      <center>
-      <p class="text-lg md:text-xl max-w-2xl mb-8 text-gray-300 animate-fade-in [animation-delay:0.3s] leading-relaxed" data-i18n="hero.description">
-        Votre alternative éthique : un site open-source, gratuit et sans les algorithmes toxiques. Partagez, regardez, et protégez-vous des contenus indésirables grâce à notre extension révolutionnaire. <br class="hidden md:block"> <strong class="text-green-400" data-i18n="hero.call_to_action">Votre participation est cruciale !</strong>
-      </p>
-      </center>
-      <div class="flex gap-4 flex-wrap justify-center animate-fade-in [animation-delay:0.6s]">
-        <a href="#site" class="px-7 py-3 bg-blue-600 rounded-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-          </svg>
-          <span data-i18n="hero.discover_platform_button">Découvrir la plateforme</span>
-        </a>
-        <a href="#extension" class="px-7 py-3 bg-green-600 rounded-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-          <span data-i18n="hero.install_extension_button">Installer l'extension</span>
-        </a>
-        <a href="#contribuer" class="px-7 py-3 bg-gray-700 rounded-xl hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
-          </svg>
-          <span data-i18n="hero.contribute_button">Contribuer</span>
-        </a>
-      </div>
-    </div>
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white opacity-70 scroll-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-    </div>
-  </section>
-
-  <section class="py-20 bg-gray-800 px-6 fade-in-section relative">
-    <h2 class="text-3xl md:text-4xl font-semibold mb-12 text-center flex items-center justify-center gap-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-        <span data-i18n="problems.title">Les pièges des plateformes actuelles</span>
-    </h2>
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-lg text-gray-300">
-      <div class="problem-card p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-        <h3 class="text-xl font-bold mb-2 text-white" data-i18n="problems.bubble_title">Bulles algorithmiques & contenu addictif</h3>
-        <p data-i18n="problems.bubble_description">Les algorithmes nous enferment dans des bulles de contenu, favorisant l'addiction et limitant l'exposition à des perspectives diverses.</p>
-      </div>
-      <div class="problem-card p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-        <h3 class="text-xl font-bold mb-2 text-white" data-i18n="problems.disinformation_title">Désinformation rampante</h3>
-        <p data-i18n="problems.disinformation_description">Sans contrôle éthique, les plateformes deviennent des foyers pour la désinformation, nuisant à une compréhension saine du monde.</p>
-      </div>
-      <div class="problem-card p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
-        <svg fill="#9333ea" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-400 mb-4"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>poison-cloud</title> <path d="M16 6.625c-2.113 0-3.868 1.418-4.453 3.34-0.638-0.326-1.344-0.527-2.109-0.527-2.589 0-4.688 2.099-4.688 4.688 0 0.111 0.022 0.213 0.029 0.322-2.199 0.765-3.78 2.843-3.78 5.303 0 3.107 2.518 5.625 5.625 5.625h18.75c3.107 0 5.625-2.518 5.625-5.625 0-2.46-1.58-4.538-3.78-5.303 0.008-0.11 0.029-0.211 0.029-0.322 0-2.589-2.099-4.688-4.688-4.688-0.766 0-1.471 0.202-2.109 0.527-0.584-1.922-2.338-3.34-4.452-3.34zM12.25 12.25l3.75 3.75 3.75-3.75 1.875 1.875-3.75 3.75 3.75 3.75-1.875 1.875-3.75-3.75-3.75 3.75-1.875-1.875 3.75-3.75-3.75-3.75 1.875-1.875z"></path> </g></svg>
-        <h3 class="text-xl font-bold mb-2 text-white" data-i18n="problems.toxicity_title">Toxicité généralisée</h3>
-        <p data-i18n="problems.toxicity_description">Les espaces de discussion se transforment souvent en environnements toxiques, impactant négativement le bien-être des utilisateurs.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 px-6 bg-gray-900 fade-in-section" id="site">
-    <h2 class="text-3xl md:text-4xl font-semibold mb-10 text-center flex items-center justify-center gap-3">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-400"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.46689 4.39207C5.75949 4.68526 5.75902 5.16013 5.46583 5.45273C3.78722 7.128 2.75 9.44218 2.75 12C2.75 14.5878 3.81163 16.9262 5.52503 18.6059C5.82082 18.8959 5.82554 19.3707 5.53557 19.6665C5.24561 19.9623 4.77076 19.967 4.47497 19.677C2.48564 17.7269 1.25 15.0071 1.25 12C1.25 9.02783 2.45721 6.33616 4.40623 4.39102C4.69941 4.09842 5.17429 4.09889 5.46689 4.39207ZM18.6164 4.46446C18.9122 4.17449 19.387 4.17921 19.677 4.475C21.5771 6.41326 22.75 9.07043 22.75 12C22.75 14.9645 21.5491 17.6499 19.609 19.5938C19.3164 19.887 18.8415 19.8875 18.5484 19.5949C18.2552 19.3023 18.2547 18.8274 18.5473 18.5342C20.2182 16.86 21.25 14.5512 21.25 12C21.25 9.47873 20.2422 7.1943 18.6059 5.52507C18.3159 5.22928 18.3206 4.75443 18.6164 4.46446ZM8.30923 7.48757C8.59226 7.79001 8.57652 8.26462 8.27408 8.54765C7.32517 9.43564 6.75 10.6502 6.75 11.9822C6.75 13.3297 7.33869 14.5573 8.30756 15.4479C8.61251 15.7282 8.63248 16.2026 8.35216 16.5076C8.07185 16.8125 7.59739 16.8325 7.29244 16.5522C6.03967 15.4006 5.25 13.7824 5.25 11.9822C5.25 10.203 6.02148 8.60128 7.24916 7.45242C7.5516 7.16939 8.02621 7.18513 8.30923 7.48757ZM15.7429 7.52559C16.0292 7.22626 16.5039 7.21571 16.8033 7.50202C18.0005 8.64714 18.75 10.2286 18.75 11.9822C18.75 13.7568 17.9825 15.3548 16.7604 16.503C16.4586 16.7867 15.9839 16.7719 15.7003 16.47C15.4167 16.1681 15.4315 15.6935 15.7333 15.4099C16.6778 14.5225 17.25 13.3108 17.25 11.9822C17.25 10.6692 16.6911 9.47046 15.7664 8.58599C15.4671 8.29968 15.4566 7.82492 15.7429 7.52559Z" fill="#93c5fd"></path> <path d="M13.6563 10.4512C14.5521 11.1088 15 11.4376 15 12.0001C15 12.5625 14.5521 12.8913 13.6563 13.549C13.4091 13.7305 13.1638 13.9014 12.9384 14.0439C12.7407 14.1688 12.5168 14.2981 12.2849 14.425C11.3913 14.9141 10.9444 15.1586 10.5437 14.8879C10.1429 14.6171 10.1065 14.0503 10.0337 12.9167C10.0131 12.5961 10 12.2818 10 12.0001C10 11.7183 10.0131 11.404 10.0337 11.0834C10.1065 9.94982 10.1429 9.38301 10.5437 9.11226C10.9444 8.8415 11.3913 9.08605 12.2849 9.57515C12.5168 9.70203 12.7407 9.83129 12.9384 9.95625C13.1638 10.0987 13.4091 10.2696 13.6563 10.4512Z" fill="#93c5fd"></path> </g></svg>
-        <span data-i18n="solutions.title">OpenStream : Nos solutions pour un web sain</span>
-    </h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto text-lg text-gray-200">
-      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-blue-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-            <span data-i18n="solutions.opensource_title">Site web open-source</span>
-        </h3>
-        <p data-i18n="solutions.opensource_description">Regardez des vidéos YouTube, uploadez les vôtres, le tout sans publicité, sans traçage et sans les algorithmes intrusifs des grandes plateformes.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-green-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
-            <span data-i18n="solutions.extension_title">Extension anti-formats courts</span>
-        </h3>
-        <p data-i18n="solutions.extension_description">Dites adieu aux contenus addictifs ! Notre extension bloque efficacement les Shorts YouTube, les Reels Instagram, et tous les formats verticaux conçus pour la rétention rapide.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-yellow-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
-            <span data-i18n="solutions.quality_gauge_title">Jauge de qualité communautaire</span>
-        </h3>
-        <p data-i18n="solutions.quality_gauge_description">Oubliez les likes et dislikes simplistes. Notre système de vote intelligent et nuancé, alimenté par la communauté, évalue la véritable valeur du contenu.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-xl transition-transform transform hover:scale-105 hover:shadow-2xl">
-        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2 text-pink-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-            <span data-i18n="solutions.donations_title">Plateforme financée par les dons</span>
-        </h3>
-        <p data-i18n="solutions.donations_description">100 % transparent et éthique : pas de pub, pas de collecte de données. OpenStream est financé uniquement par votre soutien généreux, garantissant notre indépendance.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 px-6 bg-gray-800 fade-in-section" id="extension">
-    <h2 class="text-3xl md:text-4xl font-semibold mb-8 text-center flex items-center justify-center gap-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
-        <span data-i18n="extension_section.title">Découvrez l'Extension Navigateur OpenStream</span>
-    </h2>
-    <p class="max-w-3xl mx-auto text-center text-lg text-gray-300 mb-12" data-i18n="extension_section.description">
-      Dites adieu aux formats courts inutiles et aux distractions. Notre extension bloque intelligemment les contenus verticaux et addictifs sur vos plateformes favorites.
-    </p>
-    <div class="flex flex-col md:flex-row items-center justify-center gap-10 max-w-6xl mx-auto">
-      <div class="md:w-1/2 bg-gray-700 rounded-xl p-8 shadow-2xl border border-gray-600" style="max-width: 350px;">
-        <img src="extension.png" alt="Maquette de l'extension OpenStream" rounded-lg shadow-xl mx-auto w-full h-auto object-cover border border-gray-600" />
-        <p class="text-center text-sm text-gray-400 mt-4" data-i18n="extension_section.image_caption">Aperçu : L'extension en action sur une page vidéo.</p>
-      </div>
-      <div class="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="extension_section.shield_title">Votre bouclier contre la surcharge d'information</h3>
-        <ul class="text-gray-300 text-lg space-y-3 mb-8 list-disc list-inside">
-          <li data-i18n="extension_section.feature1">Bloque les Shorts YouTube, Reels Instagram, TikToks.</li>
-          <li data-i18n="extension_section.feature2">Améliore votre concentration et réduit le temps d'écran passif.</li>
-          <li data-i18n="extension_section.feature3">Personnalisable pour s'adapter à vos préférences.</li>
+    <nav class="sidebar" id="sidebar">
+        <button class="close-sidebar" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Our Values</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#extension">Extension</a></li>
+            <li><a href="#development">Development</a></li>
+            <li><a href="https://ko-fi.com/openstream" class="btn-donate">Donate</a></li>
         </ul>
-        <a id="download-extension-btn" href="#" class="px-8 py-4 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl btn-pulse" data-i18n="extension_section.download_button" download>Télécharger l’extension maintenant !</a>
+    </nav>
+    <div class="overlay" id="overlay"></div>
 
-      </div>
-    </div>
-  </section>
 
-<section class="py-20 px-6 bg-gray-900 fade-in-section" id="contribuer">
-    <h2 class="text-3xl md:text-4xl font-semibold text-center mb-8 flex items-center justify-center gap-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-        <span data-i18n="contribute_section.title">Votre aide est essentielle : Rejoignez la communauté OpenStream !</span>
-    </h2>
-    <p class="text-center text-lg text-gray-300 max-w-2xl mx-auto mb-10" data-i18n="contribute_section.description">
-      OpenStream est un projet 100 % open-source et collaboratif, qui existe grâce à l'engagement de ses utilisateurs. Votre implication est essentielle pour faire grandir cette vision d'un web plus sain et éthique. <strong class="text-green-400" data-i18n="contribute_section.call_to_action">Nous avons besoin de vous pour continuer !</strong>
-    </p>
-    <div class="flex flex-wrap justify-center gap-6">
-      <a href="https://github.com/NewStreamTeam" target="_blank" class="flex items-center gap-2 px-7 py-3 bg-gray-700 rounded-xl hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        <span data-i18n="contribute_section.github_button">Voir sur GitHub</span>
-      </a>
-      <a href="https://discord.gg/AZBwM6u9Kr" target="_blank" class="flex items-center gap-2 px-7 py-3 bg-indigo-600 rounded-xl hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="h-6 w-6" fill="currentColor">
-          <path d="M524.5 69.8a1.5 1.5 0 0 0 -.8-.7A485.1 485.1 0 0 0 404.1 32a1.8 1.8 0 0 0 -1.9 .9 337.5 337.5 0 0 0 -14.9 30.6 447.8 447.8 0 0 0 -134.4 0 309.5 309.5 0 0 0 -15.1-30.6 1.9 1.9 0 0 0 -1.9-.9A483.7 483.7 0 0 0 116.1 69.1a1.7 1.7 0 0 0 -.8 .7C39.1 183.7 18.2 294.7 28.4 404.4a2 2 0 0 0 .8 1.4A487.7 487.7 0 0 0 176 479.9a1.9 1.9 0 0 0 2.1-.7A348.2 348.2 0 0 0 208.1 430.4a1.9 1.9 0 0 0 -1-2.6 321.2 321.2 0 0 1 -45.9-21.9 1.9 1.9 0 0 1 -.2-3.1c3.1-2.3 6.2-4.7 9.1-7.1a1.8 1.8 0 0 1 1.9-.3c96.2 43.9 200.4 43.9 295.5 0a1.8 1.8 0 0 1 1.9 .2c2.9 2.4 6 4.9 9.1 7.2a1.9 1.9 0 0 1 -.2 3.1 301.4 301.4 0 0 1 -45.9 21.8 1.9 1.9 0 0 0 -1 2.6 391.1 391.1 0 0 0 30 48.8 1.9 1.9 0 0 0 2.1 .7A486 486 0 0 0 610.7 405.7a1.9 1.9 0 0 0 .8-1.4C623.7 277.6 590.9 167.5 524.5 69.8zM222.5 337.6c-29 0-52.8-26.6-52.8-59.2S193.1 219.1 222.5 219.1c29.7 0 53.3 26.8 52.8 59.2C275.3 311 251.9 337.6 222.5 337.6zm195.4 0c-29 0-52.8-26.6-52.8-59.2S388.4 219.1 417.9 219.1c29.7 0 53.3 26.8 52.8 59.2C470.7 311 447.5 337.6 417.9 337.6z"/>
-        </svg>
-        <span data-i18n="contribute_section.discord_button">Rejoindre Discord</span>
-      </a>
-      <a href="https://ko-fi.com/NewStream" class="flex items-center gap-2 px-7 py-3 bg-pink-600 rounded-xl hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-        <span data-i18n="contribute_section.donate_button">Faire un don</span>
-      </a>
-    </div>
-  </section>
-  
-  <footer class="py-10 text-center text-gray-500 text-sm bg-gray-800 fade-in-section">
-    <span data-i18n="footer.text">© 2025 OpenStream. Un projet communautaire, libre et éthique pour un internet meilleur.</span>
-  </footer>
+    <main class="main-content">
+        <section class="hero-vitrine">
+            <div class="hero-text">
+                <h1>Discover FairPlay: <br> Content that Matters.</h1>
+                <p>Your new destination for relevant and captivating videos, ad-free, 100% free, and driven by a passionate community.</p>
+                <a href="#cta" class="btn-primary large">Explore FairPlay</a>
+            </div>
+            <div class="hero-image">
+                <div class="video-card-container">
+                    <div class="video-card-3d-effect">
+                        <div class="video-card">
+                            <div class="video-player-placeholder"></div>
+                            <div class="video-info">
+                                <h3 class="video-title">Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)</h3>
+                                <p class="video-rating">0.0 / 5</p>
+                                <p class="video-description">The official video for "Never Gonna Give You Up" by Rick Astley. Never: The Autobiography 📖 O...</p>
+                                <div class="video-tags">
+                                    <span class="tag">music</span>
+                                    <span class="tag">rickroll</span>
+                                    <span class="tag">prank</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script>
-  // i18next initialization
-  i18next
-    .use(i18nextBrowserLanguageDetector) // Use the language detector plugin
-    .init({
-      fallbackLng: 'en', // Fallback language if browser language is not supported
-      debug: true,
-      detection: {
-        order: ['navigator', 'htmlTag', 'cookie', 'localStorage'], // Order of detection methods
-        caches: ['localStorage', 'cookie'], // Cache detected language in localStorage and cookie
-      },
-      supportedLngs: ['fr', 'en', 'ro'], // List of languages your application supports
-      resources: {
-        fr: {
-          translation: {
-            hero: {
-              title: "OpenStream : le streaming propre",
-              description: "Votre alternative éthique : un site open-source, gratuit et sans les algorithmes toxiques. Partagez, regardez, et protégez-vous des contenus indésirables grâce à notre extension révolutionnaire. <br class=\"hidden md:block\">",
-              call_to_action: "Votre participation est cruciale !",
-              discover_platform_button: "Découvrir la plateforme",
-              install_extension_button: "Installer l'extension",
-              contribute_button: "Contribuer"
-            },
-            problems: {
-              title: "Les pièges des plateformes actuelles",
-              bubble_title: "Bulles algorithmiques & contenu addictif",
-              bubble_description: "Les algorithmes nous enferment dans des bulles de contenu, favorisant l'addiction et limitant l'exposition à des perspectives diverses.",
-              disinformation_title: "Désinformation rampante",
-              disinformation_description: "Sans contrôle éthique, les plateformes deviennent des foyers pour la désinformation, nuisant à une compréhension saine du monde.",
-              toxicity_title: "Toxicité généralisée",
-              toxicity_description: "Les espaces de discussion se transforment souvent en environnements toxiques, impactant négativement le bien-être des utilisateurs."
-            },
-            solutions: {
-              title: "OpenStream : Nos solutions pour un web sain",
-              opensource_title: "Site web open-source",
-              opensource_description: "Regardez des vidéos YouTube, uploadez les vôtres, le tout sans publicité, sans traçage et sans les algorithmes intrusifs des grandes plateformes.",
-              extension_title: "Extension anti-formats courts",
-              extension_description: "Dites adieu aux contenus addictifs ! Notre extension bloque efficacement les Shorts YouTube, les Reels Instagram, et tous les formats verticaux conçus pour la rétention rapide.",
-              quality_gauge_title: "Jauge de qualité communautaire",
-              quality_gauge_description: "Oubliez les likes et dislikes simplistes. Notre système de vote intelligent et nuancé, alimenté par la communauté, évalue la véritable valeur du contenu.",
-              donations_title: "Plateforme financée par les dons",
-              donations_description: "100 % transparent et éthique : pas de pub, pas de collecte de données. OpenStream est financé uniquement par votre soutien généreux, garantissant notre indépendance."
-            },
-            extension_section: {
-              title: "Découvrez l'Extension Navigateur OpenStream",
-              description: "Dites adieu aux formats courts inutiles et aux distractions. Notre extension bloque intelligemment les contenus verticaux et addictifs sur vos plateformes favorites.",
-              image_caption: "Aperçu : L'extension en action sur une page vidéo.",
-              shield_title: "Votre bouclier contre la surcharge d'information",
-              feature1: "Bloque les Shorts YouTube, Reels Instagram, TikToks.",
-              feature2: "Améliore votre concentration et réduit le temps d'écran passif.",
-              feature3: "Personnalisable pour s'adapter à vos préférences.",
-              download_button: "Télécharger l’extension maintenant !"
-            },
-            contribute_section: {
-              title: "Votre aide est essentielle : Rejoignez la communauté OpenStream !",
-              description: "OpenStream est un projet 100 % open-source et collaboratif, qui existe grâce à l'engagement de ses utilisateurs. Votre implication est essentielle pour faire grandir cette vision d'un web plus sain et éthique.",
-              call_to_action: "Nous avons besoin de vous pour continuer !",
-              github_button: "Voir sur GitHub",
-              discord_button: "Rejoindre Discord",
-              donate_button: "Faire un don"
-            },
-            footer: {
-              text: "© 2025 OpenStream. Un projet communautaire, libre et éthique pour un internet meilleur."
-            },
-            language_button: {
-              english: "English",
-              french: "Français",
-              romanian: "Roumain"
-            }
-          }
-        },
-        en: {
-          translation: {
-            hero: {
-              title: "OpenStream: Clean Streaming",
-              description: "Your ethical alternative: an open-source, free site without toxic algorithms. Share, watch, and protect yourself from unwanted content with our revolutionary extension. <br class=\"hidden md:block\">",
-              call_to_action: "Your participation is crucial!",
-              discover_platform_button: "Discover the Platform",
-              install_extension_button: "Install the Extension",
-              contribute_button: "Contribute"
-            },
-            problems: {
-              title: "The Pitfalls of Current Platforms",
-              bubble_title: "Algorithmic Bubbles & Addictive Content",
-              bubble_description: "Algorithms trap us in content bubbles, fostering addiction and limiting exposure to diverse perspectives.",
-              disinformation_title: "Rampant Disinformation",
-              disinformation_description: "Without ethical control, platforms become breeding grounds for disinformation, harming a healthy understanding of the world.",
-              toxicity_title: "Widespread Toxicity",
-              toxicity_description: "Discussion spaces often turn into toxic environments, negatively impacting user well-being."
-            },
-            solutions: {
-              title: "OpenStream: Our Solutions for a Healthy Web",
-              opensource_title: "Open-Source Website",
-              opensource_description: "Watch YouTube videos, upload your own, all without ads, tracking, or the intrusive algorithms of major platforms.",
-              extension_title: "Anti-Vertical Content Extension",
-              extension_description: "Say goodbye to addictive content! Our extension effectively blocks YouTube Shorts, Instagram Reels, and all vertical formats designed for quick retention.",
-              quality_gauge_title: "Community Quality Gauge",
-              quality_gauge_description: "Forget simplistic likes and dislikes. Our intelligent and nuanced voting system, powered by the community, evaluates the true value of content.",
-              donations_title: "Donation-Funded Platform",
-              donations_description: "100% transparent and ethical: no ads, no data collection. OpenStream is funded solely by your generous support, guaranteeing our independence."
-            },
-            extension_section: {
-              title: "Discover the OpenStream Browser Extension",
-              description: "Say goodbye to unnecessary short-form content and distractions. Our extension intelligently blocks vertical and addictive content on your favorite platforms.",
-              image_caption: "Preview: The extension in action on a video page.",
-              shield_title: "Your Shield Against Information Overload",
-              feature1: "Bloque les Shorts YouTube, Reels Instagram, TikToks.",
-              feature2: "Améliore votre concentration et réduit le temps d'écran passif.",
-              feature3: "Personnalisable pour s'adapter à vos préférences.",
-              download_button: "Download the Extension Now!"
-            },
-            contribute_section: {
-              title: "Your Help is Essential: Join the OpenStream Community!",
-              description: "OpenStream is a 100% open-source and collaborative project, existing thanks to the commitment of its users. Your involvement is essential to grow this vision of a healthier and ethical web.",
-              call_to_action: "We need you to continue!",
-              github_button: "View on GitHub",
-              discord_button: "Join Discord",
-              donate_button: "Make a Donation"
-            },
-            footer: {
-              text: "© 2025 OpenStream. A community-driven, free, and ethical project for a better internet."
-            },
-            language_button: {
-              english: "English",
-              french: "Français",
-              romanian: "Romanian"
-            }
-          }
-        },
-        ro: {
-          translation: {
-            hero: {
-              title: "OpenStream : Streaming-ul cum se cade",
-              description: "Alternativa dumneavoastră la streamig-ul pe Internet : un site open-source, gratuit și fără algoritmii toxici. Distribuiți, Urmăriți, și scăpați de conținutul nedorit cu extensia noastră revolutionara. <br class=\"hidden md:block\">",
-              call_to_action: "Participarea voastră este cruciala !",
-              discover_platform_button: "Descoperiți platforma",
-              install_extension_button: "Instalați extensia",
-              contribute_button: "Contribuiți"
-            },
-            problems: {
-              title: "Capcanele platformelor actuale",
-              bubble_title: "Bule algoritmice & conținuturi adictive",
-              bubble_description: "Algoritmi ne închid în bule de conținut, favorizând adicția și limitând expoziția la perspective diverse.",
-              disinformation_title: "Dezinformarea în creștere",
-              disinformation_description: "Fără un control etic, platformele devin un cuib al dezinformări, dăunând unei înțelegeri sănătoase a lumii.",
-              toxicity_title: "Toxicitate Generalizata",
-              toxicity_description: "Spatiile de discutare se transforma des în locuri toxice, impactănd într-un fel negativ buna stare a utilizatorilor."
-            },
-            solutions: {
-              title: "OpenStream : Soluțiile noastre pentru un Internet curat",
-              opensource_title: "Site web open-source",
-              opensource_description: "Urmăriți videoclipurii pe YouTube, Încărcați-le pe ale voastre, totu' fără reclame, tracking și fără algoritmii intrusivi ale marilor platforme.",
-              extension_title: "Extensie anti format Short",
-              extension_description: "Spuneți pa conținuturilor adictive ! Extensia noastră blochează eficient Shorts-urile YouTube, Reels-urile Instagram și toate formatele scurte Concepute pentru retenție rapidă.",
-              quality_gauge_title: "Indicator de calitate comunitar",
-              quality_gauge_description: "Uita de Like-uri si Dislike-uri simpliste. Sistemul nostru de voturi inteligent și nuanțat, alimentat de către comunitate, evalua-za veritabila valoare a conținutului.",
-              donations_title: "Platforma este finanțata de către voi",
-              donations_description: "100% transparent si etic : Nici o reclama, Nici o colectare de date. OpenStream este finanțat doar de către donațiile utilizatorilor, cea ce ne garantează independenta."
-            },
-            extension_section: {
-              title: "Descoperiți extensia de Browser OpenStream",
-              description: "Spuneți pa formatelor scurte inutile ce distrag doar atenția. Extensia noastre blochează conținuturile verticale și adictive pe platformele voastre favorite.",
-              image_caption: "Aperçu : Extensia în acțiune pe o pagină de video.",
-              shield_title: "Scutul vostra contra suprasolicitări de informații.",
-              feature1: "Blochează Shorts-urile YouTube, Reels-urilr Instagram și TikTok-urile.",
-              feature2: "Îmbunătățește concentrarea și reduce timpul petrecut în fața ecranului în mod pasiv.",
-              feature3: "Personalizabil pentru a se adapta preferințelor dumneavoastră.",
-              download_button: "Descarca extensia acum !"
-            },
-            contribute_section: {
-              title: "Ajutorul vostru este esențial : Alăturați-va comunități OpenStream !",
-              description: "OpenStream este un proiect 100% Open-Source și colaborativ, ce poate exista doar prin ajutorul financiar oferit de către utilizatorii sai. Implicarea dumneavoastră este esențiala pentru a face ca aceasta viziune a Web-ului mai sănătos și etic.",
-              call_to_action: "Avem nevoie de dumneavoastră pentru a continua !",
-              github_button: "Vezi pe GitHub",
-              discord_button: "Vine pe Discord-ul nostru",
-              donate_button: "Donează"
-            },
-            footer: {
-              text: "© 2025 OpenStream. Un proiect comunitar, liber și etic pentru un Internet mai bun. ^^ <br> Tradus de catre GNU/Alex"
-            },
-            language_button: {
-              english: "Engleza",
-              french: "Franceza",
-              romanian: "Romana"
-            }
-          }
-        },
-      }
-    }, function(err, t) {
-      // init callbacks
-      updateContent();
-    });
+<section id="about" class="section-intro section-hidden">
+            <div class="intro-card">
+                <h2>Our Mission: Redefining Streaming</h2>
+                <p>In a world saturated with misinformation and ephemeral formats, FairPlay offers a space where quality, depth, and ethics come first. We believe that enriching entertainment and reliable information can exist without compromise.</p>
+            </div>
+        </section>
 
-  function updateContent() {
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-      const key = element.getAttribute('data-i18n');
-      element.innerHTML = i18next.t(key);
-    });
-    // Update the language switcher button text based on current language
-    const langSwitcher = document.getElementById('language-switcher');
-    if (i18next.language === 'fr') {
-      langSwitcher.textContent = i18next.t('language_button.english');
-    } else if (i18next.language === 'en') {
-      langSwitcher.textContent = i18next.t('language_button.romanian');
-    } else if (i18next.language === 'ro') {
-      langSwitcher.textContent = i18next.t('language_button.french');
-    }
-}
+        <section id="features" class="section-features section-hidden">
+            <h2>Why choose FairPlay?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>100% Free. Forever.</h3>
+                    <p>Access an unlimited library of videos with no fees or subscriptions. We are committed to universal access to quality knowledge and entertainment.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-ad"></i>
+                    <h3>Zero Ads. Zero Interruptions.</h3>
+                    <p>Enjoy your videos in complete serenity. FairPlay is proudly built without any advertising, for total immersion in the content.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <h3>An Engaged Community.</h3>
+                    <p>Participate in constructive exchanges, comment, annotate, and create. FairPlay is a platform built by and for its users.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Open Source & Free API.</h3>
+                    <p>Our code is open to all. Contribute, innovate, or build on our foundation. The FairPlay ecosystem is transparent and collaborative.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Relevant & Captivating Content.</h3>
+                    <p>No more misinformation and sensationalism. FairPlay values enlightening documentaries, useful tutorials, inspiring stories, and in-depth entertainment.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Fairness and Respect.</h3>
+                    <p>Our moderation focuses on promoting a healthy environment, excluding controversial topics and encouraging respectful discussions.</p>
+                </div>
+            </div>
+        </section>
 
-document.getElementById('language-switcher').addEventListener('click', function() {
-    const currentLang = i18next.language;
-    let newLang;
-    if (currentLang === 'fr') {
-      newLang = 'en'; // Toggle from French to English
-    } else if (currentLang === 'en') {
-      newLang = 'ro'; // Toggle from English to Romanian
-    } else {
-      newLang = 'fr'; // Toggle from Romanian to French
-    }
-    i18next.changeLanguage(newLang, (err, t) => {
-      if (err) return console.log('something went wrong loading', err);
-      updateContent();
-    });
-});
+        <section id="extension" class="section-extension section-hidden">
+            <div class="extension-content">
+                <div class="extension-image">
+                    <img src="addon.png" alt="Visual of the FairPlay browser extension">
+                </div>
+                <div class="extension-text">
+                    <h2>Control Your Web experience with the FairPlay extension</h2>
+                    <p>Tired of short, addictive content polluting your news feed? Our browser extension allows you to take back control.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Blocks YouTube "Shorts" and Instagram/Facebook "Reels".</li>
+                        <li><i class="fas fa-check-circle"></i> Removes TikTok and Snap videos.</li>
+                        <li><i class="fas fa-check-circle"></i> Customize domains to block for more targeted Browse.</li>
+                    </ul>
+                    <a href="https://microsoftedge.microsoft.com/addons/detail/antivertical-content/aafojaecolkacnnbkmodafapbcbcapkb" class="btn-primary">Install Extension (Edge)</a>
+                </div>
+            </div>
+        </section>
 
-  document.addEventListener("DOMContentLoaded", function() {
-    const animatedSections = document.querySelectorAll('.fade-in-section');
+        <section id="development" class="section-development section-hidden">
+            <h2>FairPlay: An open and evolving project</h2>
+            <p>We believe in the power of collaboration. FairPlay is entirely Open Source, meaning its code is accessible and modifiable by everyone. Our public and free API encourages innovation and allows everyone to build on our platform.</p>
+            <div class="development-links">
+                <a href="https://github.com/NewStreamTeam/" class="btn-secondary"><i class="fab fa-github"></i> Source code on GitHub</a>
+                <a href="contributors.html#api" class="btn-secondary"><i class="fas fa-book-open"></i> API Documentation</a>
+                <a href="contributors.html" class="btn-secondary"><i class="fas fa-code"></i> Contribution guide</a>
+            </div>
+        </section>
 
-    if (!animatedSections.length) {
-      return;
-    }
+        <section id="community" class="section-community section-hidden">
+            <div class="community-content">
+                <div class="community-discord-widget">
+                    <iframe src="https://discord.com/widget?id=1385601656028270594&theme=dark" 
+                            width="350" 
+                            height="500" 
+                            allowtransparency="true" 
+                            frameborder="0" 
+                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                    </iframe>
+                </div>
+                <div class="community-text">
+                    <h2>Join our community</h2>
+                    <p>FairPlay is more than a platform, it's a movement. By joining our community, you contribute to shaping the future of streaming. Share your passions, discover new perspectives, and connect with curious and benevolent minds.</p>
+                    <a href="https://discord.gg/AZBwM6u9Kr" class="btn-secondary">Discover our Discord</a>
+                </div>
+            </div>
+        </section>
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+        <section id="support" class="section-support section-hidden">
+            <h2>Support FairPlay, Support Quality Content</h2>
+            <p>FairPlay is 100% free and ad-free, and that will always be our commitment. If you appreciate our mission and our platform, your donation directly helps us cover infrastructure costs, improve features, and grow our community. Every contribution counts, big or small.</p>
+            <a href="https://ko-fi.com/openstream" class="btn-donate large">Donate Now</a>
+            <p class="support-note">A big thank you for your generosity!</p>
+        </section>
 
-    animatedSections.forEach(section => {
-      observer.observe(section);
-    });
-  });
+        <section id="cta" class="section-cta section-hidden">
+            <h2>Ready to Play?</h2>
+            <p>FairPlay is constantly evolving. Join the adventure today and be part of a unique streaming experience.</p>
+            <div class="cta-buttons">
+                <a href="https://openstream.4-hosting.fr/videos" class="btn-primary large">See the MVP</a>
+                <a href="contributors.html" class="btn-secondary large">Contribute to the Project</a>
+            </div>
+        </section>
+    </main>
 
-  for (let i = 0; i < 20; i++) {
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
-    bubble.style.width = `${Math.random() * 40 + 10}px`;
-    bubble.style.height = bubble.style.width;
-    bubble.style.left = `${Math.random() * 100}%`;
-    bubble.style.animationDuration = `${10 + Math.random() * 20}s`;
-    document.body.appendChild(bubble);
-  }
-  document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('download-extension-btn');
-  const ua = navigator.userAgent;
-  let downloadUrl;
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">FairPlay</div>
+            <div class="footer-links">
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Code of Conduct</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/NewStreamTeam/"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/StreamNew90503"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.gg/AZBwM6u9Kr"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 FairPlay. Powered by the Community.</p>
+    </footer>
 
-  // zips
-  const chromeZip = 'downloads/openstream-chromium.zip'
-  const firefoxZip = 'downloads/openstream-firefox.zip';
-
-  // Détection basique
-  if (/Firefox\//.test(ua)) {
-    downloadUrl = firefoxZip;
-  } else if (/Chrome\//.test(ua) && !/Edg\//.test(ua)) {
-    downloadUrl = chromeZip;
-  } else if (/Edg\//.test(ua)) {
-    // Edge (Chromium)
-    downloadUrl = chromeZip;
-  } else {
-    // Par défaut on propose Chrome
-    downloadUrl = chromeZip;
-  }
-
-  btn.href = downloadUrl;
-});
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
