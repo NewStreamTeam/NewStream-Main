@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairPlay for Developers - Contribution Guide</title>
+    <link rel="stylesheet" href="contributors.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Topbar identique à index.html -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="index.html" class="logo">FairPlay</a>
+            <button class="hamburger-menu" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#features">Our Values</a></li>
+                    <li><a href="index.html#community">Community</a></li>
+                    <li><a href="index.html#extension">Extension</a></li>
+                    <li><a href="index.html#development">Development</a></li>
+                    <li><a href="https://ko-fi.com/openstream" class="btn-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile sidebar et overlay -->
+    <nav class="sidebar" id="sidebar">
+        <button class="close-sidebar" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><i class="fas fa-code-branch"></i> <a href="#getting-started">Getting Started</a></li>
+            <li><i class="fas fa-video"></i> <a href="#video-tutorials">Video Tutorials</a></li>
+            <li><i class="fas fa-bug"></i> <a href="#reporting-issues">Reporting Issues</a></li>
+            <li><i class="fas fa-paint-brush"></i> <a href="#style-guide">Style Guide</a></li>
+            <li><i class="fas fa-hand-holding-usd"></i> <a href="#sponsorship">Sponsorship</a></li>
+            <li><i class="fas fa-question-circle"></i> <a href="#">FAQ for Contributors</a></li>
+        </ul>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul id="sidebar-menu">
+                    <li><a href="#introduction"><i class="fas fa-info-circle"></i> Introduction</a></li>
+                    <li>
+                        <a href="#development-setup"><i class="fas fa-code"></i> Development</a>
+                        <ul>
+                            <li><a href="#env-setup"><i class="fas fa-laptop-code"></i> Environment</a></li>
+                            <li><a href="#code-structure"><i class="fas fa-sitemap"></i> Code Structure</a></li>
+                            <li><a href="#git-workflow"><i class="fas fa-code-branch"></i> Git Workflow</a></li>
+                            <li><a href="#testing"><i class="fas fa-vial"></i> Tests</a></li>
+                            <li><a href="#api"><i class="fas fa-cloud"></i> API</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#non-dev-contributions"><i class="fas fa-handshake"></i> Contributions (Others)</a>
+                        <ul>
+                            <li><a href="#translation"><i class="fas fa-language"></i> Translation</a></li>
+                            <li><a href="#documentation"><i class="fas fa-book"></i> Writing & Doc.</a></li>
+                            <li><a href="#design"><i class="fas fa-palette"></i> Design (UI/UX)</a></li>
+                            <li><a href="#moderation"><i class="fas fa-shield-alt"></i> Moderation</a></li>
+                            <li><a href="#bug-reporting"><i class="fas fa-bug"></i> Bug Reporting</a></li>
+                            <li><a href="#promotion"><i class="fas fa-share-alt"></i> Promotion</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#code-of-conduct"><i class="fas fa-gavel"></i> Code of Conduct</a></li>
+                    <li><a href="#resources"><i class="fas fa-external-link-alt"></i> Useful Resources</a></li>
+                    <li><a href="#license"><i class="fas fa-file-contract"></i> Project License</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content-area">
+            <section id="introduction" class="content-section">
+                <h2>Introduction and Project Philosophy</h2>
+                <p>Welcome! We are delighted by your interest in contributing to our mission to redefine streaming. FairPlay is a 100% free, ad-free platform dedicated to relevant and entertaining content. Our philosophy is rooted in openness, transparency, and community collaboration. By joining our contributors, you're not just coding; you're participating in a movement for a fairer, richer web.</p>
+                <p>Whether you're an experienced developer, translator, designer, or simply passionate about our cause, your contribution is valuable. Together, we are building a space where quality and ethics come first.</p>
+            </section>
+
+            <section id="development-setup" class="content-section">
+                <h2>Development (Setup)</h2>
+                <p>This section is for developers wishing to contribute directly to FairPlay's code. Follow these steps to set up your environment and understand our processes.</p>
+
+                <h3 id="env-setup">Development Environment</h3>
+                <p>To get started, make sure you have the following prerequisites installed:</p>
+                <ul>
+                    <li>Node.js (LTS version recommended)</li>
+                    <li>npm or yarn</li>
+                    <li>Git</li>
+                </ul>
+                <p>Clone our main GitHub repository:</p>
+                <pre><code>git clone https://github.com/NewStreamTeam/NewStream-Website.git
+cd NewStream-Website</code></pre>
+                <p>Install Next.js project dependencies:</p>
+                <pre><code>npm install
+# or
+yarn install</code></pre>
+                <p>Configure your environment variables by creating a <code>.env.local</code> file at the root of the project. You will need your Supabase keys (available on your Supabase dashboard):</p>
+                <pre><code>NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY</code></pre>
+                <p>To run the project locally, execute:</p>
+                <pre><code>npm run dev
+# or
+yarn dev</code></pre>
+                <p>The application will be accessible at <code>http://localhost:3000</code>.</p>
+
+                <h3 id="code-structure">Code Structure</h3>
+                <p>The FairPlay project is a <b>Next.js</b> application in <b>TypeScript</b>, using <b>Supabase</b> for the database and <b>Tailwind CSS</b> for styling. Here is the file and folder organization:</p>
+                <pre><code>
+/   # Project Root
+├── README.md
+├── package.json            # Dependencies and NPM scripts
+├── next.config.ts          # Next.js configuration
+├── tailwind.config.js      # Tailwind CSS customization
+├── tsconfig.json           # TypeScript options
+├── public/                 # Static files (icons, images…)
+├── lib/
+│   └── supabase.ts         # Supabase client initialization (server-side)
+└── src/
+    ├── app/                # Next.js “app” folder
+    │   ├── globals.css     # Global styles
+    │   ├── layout.tsx      # Root layout
+    │   └── page.tsx        # Homepage
+    ├── components/         # Reusable React components
+    │   ├── Layout.tsx
+    │   ├── UploadModal.tsx
+    │   ├── UserMenu.tsx
+    │   └── icons.tsx
+    ├── lib/                # Application-side utilities
+    │   ├── supabase.ts     # Supabase client for the frontend
+    │   ├── publicApi.ts    # API key verification and rate-limiting
+    │   ├── recommend.ts    # Video recommendation logic
+    │   └── utils.ts        # Helper functions
+    ├── pages/              # File-based routes
+    │   ├── api/            # Internal and public endpoints
+    │   │   ├── index.ts
+    │   │   ├── login.ts
+    │   │   ├── register.ts
+    │   │   ├── videos.ts
+    │   │   ├── videos/[id].ts
+    │   │   └── v1/         # Public API (/api/v1)
+    │   │       ├── index.ts
+    │   │       ├── login.ts
+    │   │       ├── register.ts
+    │   │       ├── videos.ts
+    │   │       └── videos/[id].ts
+    │   ├── login.tsx       # Authentication form
+    │   ├── upload.tsx      # Video upload
+    │   ├── videos.tsx      # Video list
+    │   └── video/[id].tsx  # Video details
+    └── types.ts            # Shared TypeScript types
+
+</code></pre>
+                <h3 id="git-workflow">Contribution Process (Git Workflow)</h3>
+                <p>We use a workflow based on feature branches and Pull Requests (PRs):</p>
+                <ol>
+                    <li><b>Fork</b> the FairPlay repository on GitHub.</li>
+                    <li><b>Clone</b> your fork locally.</li>
+                    <li>Create a new <b>feature branch</b> from <code>main</code>: <code>git checkout -b feature/your-feature</code> or <code>bugfix/bug-fix</code>.</li>
+                    <li><b>Commit</b> your changes atomically and with clear messages.</li>
+                    <li><b>Push</b> your branch to your fork: <code>git push origin feature/your-feature</code>.</li>
+                    <li>Open a <b>Pull Request (PR)</b> on the main FairPlay repository. Describe the changes precisely, solved issues, and include screenshots if relevant.</li>
+                    <li>Respond to comments during the <b>code review</b> and make necessary modifications.</li>
+                </ol>
+
+                <h3 id="testing">Tests</h3>
+                <p>Each new feature or bug fix must be accompanied by relevant tests. We use <b>Jest</b> and <b>React Testing Library</b> for unit and integration testing of components and functions. To run the tests:</p>
+                <pre><code>npm test
+# or
+yarn test</code></pre>
+                <p>Good code coverage is essential for FairPlay's stability. Make sure all tests pass before submitting a PR.</p>
+                <h3 id="api">API</h3>
+                <p>You can use our API for free</p>
+                <p>To access the API, you can use the following endpoints:</p>
+                <p><code>/api/v1/videos</code> To access at every single videos on en db, including : Title, link, description, notation...</p>
+                <p><code>/api/v1/videos/{id}</code> To access a specific video by its ID, including : Title, link, description, notation...</p>
+                <p><code>/api/v1/login</code> To login to your account, you need to provide your email and password.</p>
+                <p><code>/api/v1/register</code> To register a new account, you need to provide your email, password and pseudo.</p>
+                <p>More endpoints are gonna be added and improved soon.</p>
+            </section>
+
+            <section id="non-dev-contributions" class="content-section">
+                <h2>Contributions (Non-Developers)</h2>
+                <p>Not a coder? No problem! There are many ways to contribute to FairPlay's success.</p>
+
+                <h3 id="translation">Translation</h3>
+                <p>Help us make FairPlay accessible worldwide. We manage text localization via JSON files. If you wish to translate FairPlay into a new language or improve an existing translation, please contact us on Discord for instructions and files to translate.</p>
+
+                <h3 id="documentation">Writing and Documentation</h3>
+                <p>Good documentation is key to a successful Open Source project. Whether it's to improve our existing guides, create new tutorials, write blog posts, or enrich our technical wiki, your writing talent is welcome. All documentation files are in Markdown and are versioned in the <code>/docs</code> folder of our main repository.</p>
+
+                <h3 id="design">Design (UI/UX)</h3>
+                <p>User experience is paramount. If you have UI/UX design skills, feel free to propose mockups (e.g., on Figma), provide feedback on ergonomics, or suggest visual improvements. We are open to new ideas to make FairPlay even more intuitive and pleasant, while respecting our design principles based on Tailwind CSS.</p>
+
+                <h3 id="moderation">Moderation</h3>
+                <p>To maintain a healthy and respectful environment, we rely on volunteer moderators. Their role is to ensure that interactions remain constructive and that content respects our guidelines (no misinformation, politics, or religion). A detailed moderation guide is available for members of our moderation community.</p>
+
+                <h3 id="bug-reporting">Testing and Bug Reports</h3>
+                <p>Even before writing a line of code, testing the application is an invaluable contribution. If you find a bug, please report it via our <a href="#">GitHub issue tracker</a> by following the provided template. Provide as many details as possible (reproduction steps, environment, screenshots) to help us reproduce and fix it.</p>
+
+                <h3 id="promotion">Promotion and Communication</h3>
+                <p>Spread the word about FairPlay! Share our project on social media, tell your friends, or write an article. Any form of promotion helps FairPlay reach a wider audience and find new contributors. Don't hesitate to contact us if you have ideas for partnerships or events.</p>
+            </section>
+
+            <section id="code-of-conduct" class="content-section">
+                <h2>Code of Conduct</h2>
+                <p>FairPlay is committed to providing a welcoming and inclusive environment for everyone, regardless of experience, gender, sexual orientation, disability, personal appearance, race, ethnicity, religion, or nationality.</p>
+                <p>We expect all contributors to show respect, courtesy, and open-mindedness. Harassing, discriminatory, or disrespectful behavior will not be tolerated. Discussions on political and religious topics, as well as the spread of misinformation, are strictly prohibited to maintain an environment focused on relevant and entertaining content.</p>
+                <p>If you observe inappropriate behavior, please report it immediately to <a href="mailto:contact.newstreamteam@gmail.com">contact.newstreamteam@gmail.com</a>.</p>
+            </section>
+
+            <section id="resources" class="content-section">
+                <h2>Useful Resources</h2>
+                <p>Here are some essential links to help you on your contribution journey:</p>
+                <ul>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com/NewStreamTeam/NewStream-Website/" target="_blank">Official GitHub Repositories</a></li>
+                    <li><i class="fas fa-book-open"></i> <a href="#">API Documentation (Coming Soon)</a></li>
+                    <li><i class="fab fa-discord"></i> <a href="https://discord.gg/AZBwM6u9Kr">Join our Community Discord server</a></li>
+                    <li><i class="fas fa-question-circle"></i> <a href="#">FAQ for Contributors</a></li>
+                </ul>
+            </section>
+
+            <section id="license" class="content-section">
+                <h2>Project License</h2>
+                <p>FairPlay is an Open Source project distributed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>. This means that the code is free to be used, modified, and distributed, under certain conditions. By contributing to FairPlay, you agree that your contributions are also subject to this license.</p>
+                <p>Please refer to the <code>LICENSE.md</code> file in the main repository for full details.</p>
+            </section>
+        </main>
+    </div>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">FairPlay</div>
+            <div class="footer-links">
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Code of Conduct</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/NewStreamTeam/"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/StreamNew90503"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.gg/AZBwM6u9Kr"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 FairPlay. Powered by the Community.</p>
+    </footer>
+    <script src="contributors.js"></script>
+</body>
+</html>

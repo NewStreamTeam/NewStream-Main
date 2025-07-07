@@ -1,0 +1,409 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-light-gray: #F0F0F0;
+    --color-medium-gray: #666666;
+    --color-dark-gray: #333333;
+    --color-accent: #6A8EFB; /* Bleu clair apaisant */
+    --color-accent-dark: #557CD9; /* Nuance plus foncée de l'accent */
+    --color-donate-pink: #FF69B4; /* Rose vif */
+    --color-donate-pink-dark: #E05CA1; /* Nuance plus foncée du rose */
+    --color-text-light: #999999;
+}
+
+/* General Body and Font Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* --- En-tête Global --- */
+.main-header {
+    background-color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligne verticalement tous les éléments */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--color-dark-gray);
+    transition: color 0.2s ease;
+}
+
+.logo:hover {
+    color: var(--color-accent);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center; /* Assure l'alignement vertical des éléments de la nav */
+    gap: 30px;
+    margin: 0px;
+    list-style: none;
+}
+
+.main-nav a {
+    color: var(--color-medium-gray);
+    font-size: 17px;
+    transition: color 0.2s ease;
+    padding: 5px 0; /* Pour une meilleure zone de clic */
+    position: relative;
+    white-space: nowrap; /* Empêche le retour à la ligne des liens */
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* Pas de soulignement pour les boutons */
+.main-nav a:not(.btn-donate)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:not(.btn-donate):hover::after {
+    width: 100%;
+}
+
+/* Style spécifique pour le bouton de DON dans la topbar */
+.btn-donate {
+    background-color: var(--color-donate-pink);
+    color: var(--color-white) !important; /* Assure que le texte est blanc */
+    padding: 5px 15px !important;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-donate:hover {
+    background-color: var(--color-donate-pink-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Ombre avec la couleur rose */
+}
+
+/* Main Layout for Content and Sidebar */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Clear floats */
+}
+
+/* Sidebar desktop */
+.sidebar {
+    width: 280px;
+    background-color: #f8f8f8;
+    padding: 30px 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out; /* Pour l’animation mobile */
+    z-index: 1000;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
+    background-color: #e9ecef;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.sidebar-nav ul ul {
+    margin-top: 5px;
+    margin-left: 20px;
+    border-left: 2px solid #eee;
+    padding-left: 10px;
+}
+
+.sidebar-nav ul ul li a {
+    padding: 8px 10px;
+    font-size: 0.9em;
+}
+
+.sidebar-nav ul li a i {
+    margin-right: 10px;
+    color: #888;
+}
+
+/* Main Content Area */
+.content-area {
+    flex-grow: 1; /* Allow content to take remaining space */
+    padding: 30px;
+}
+
+.content-section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.content-section:last-child {
+    border-bottom: none;
+}
+
+.content-section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.content-section h3 {
+    color: #34495e;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.content-section ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.content-section ol {
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.content-section li {
+    margin-bottom: 8px;
+}
+
+pre {
+    background-color: #F8F8F8;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+code {
+    background-color: #F8F8F8;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-dark-gray);
+    color: var(--color-text-light);
+    padding: 40px 40px 20px 40px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto 30px auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-white);
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--color-text-light);
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--color-text-light);
+    font-size: 20px;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+}
+
+.copyright {
+    color: var(--color-text-light);
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 14px;
+}
+@media (max-width: 992px) {
+    /* Masquer la nav principale pour afficher le burger */
+    .main-nav {
+        display: none;
+    }
+    /* Sidebar mobile unifié */
+    nav.sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;           /* on fixe la largeur */
+        height: 100%;           /* plein écran vertical */
+        overflow-y: auto;
+        padding-top: 70px;      /* pour laisser la place à la topbar */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+        background-color: var(--color-light-gray);
+        z-index: 1001;
+        transform: translateX(-100%);   /* décalée hors-écran à gauche */
+        transition: transform 0.3s ease-in-out;
+    }
+    nav.sidebar.active {
+        transform: translateX(0);       /* remise en place quand active */
+    }
+
+    /* Afficher le bouton hamburger */
+    .hamburger-menu {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: var(--color-dark-gray);
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* Sidebar desktop (aside) - Cacher celle-ci sur mobile */
+    aside.sidebar { /* Cible spécifiquement l'élément aside avec la classe sidebar */
+        display: none;
+    }
+
+    /* Sidebar mobile (nav.sidebar) - Initialement hors-écran à gauche */
+    nav.sidebar { /* Cible la nav avec la classe sidebar et l'ID sidebar */
+        position: fixed;
+        top: 0;
+        left: -280px; /* Position initiale cachée */
+        height: 100%;
+        overflow-y: auto;
+        padding-top: 70px; /* Laisse de la place pour la topbar */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+        background-color: #f8f8f8;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Quand la sidebar mobile est active (ouverte) */
+    nav.sidebar.active {
+        transform: translateX(280px); /* Déplace pour la rendre visible */
+    }
+
+    /* Overlay (fond semi-transparent) */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        display: none; /* Initialement caché */
+    }
+    .overlay.active {
+        display: block; /* Visible quand actif */
+    }
+
+    /* Ajustements de layout pour le conteneur principal */
+    .container {
+        flex-direction: column;
+        margin: 10px;
+        box-shadow: none;
+    }
+}
+
+/* Desktop: masquer burger, overlay et sidebar mobile (nav) */
+@media (min-width: 993px) {
+    .hamburger-menu,
+    nav.sidebar, /* Masque la sidebar mobile sur desktop */
+    .overlay {
+        display: none;
+    }
+    .main-nav {
+        display: block; /* Affiche la navigation principale sur desktop */
+    }
+    aside.sidebar { /* S'assure que la sidebar desktop (aside) est visible sur desktop */
+        display: block; /* Ou display: flex; si c'est un flex container */
+    }
+}
