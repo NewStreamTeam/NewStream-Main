@@ -238,6 +238,16 @@ section h2 {
     font-size: 56px;
     margin-bottom: 25px;
     line-height: 1.1;
+    /* Animation styles for hero-text elements */
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-text.animate h1 {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s;
 }
 
 .hero-text p {
@@ -245,6 +255,29 @@ section h2 {
     color: var(--color-medium-gray);
     margin-bottom: 40px;
     max-width: 600px;
+    /* Animation styles for hero-text elements */
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-text.animate p {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.4s;
+}
+
+.hero-text .btn-primary {
+    /* Animation styles for hero-text elements */
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.hero-text.animate .btn-primary {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.6s;
 }
 
 .hero {
