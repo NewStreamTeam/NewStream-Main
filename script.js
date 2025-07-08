@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const closeSidebarBtn = document.querySelector('.close-sidebar');
     const sidebar = document.getElementById('sidebar');
@@ -63,6 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
         heroImage.classList.add('animate');
     }
 
+    const heroText = document.querySelector('.hero-text');
+    if (heroText) {
+        setTimeout(() => {
+            heroText.classList.add('animate');
+        }, 100);
+    }
+
     const sections = document.querySelectorAll('.section-hidden');
 
     const observerOptions = {
@@ -85,4 +93,3 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 });
-
