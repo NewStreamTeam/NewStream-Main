@@ -3,14 +3,13 @@
     --color-light-gray: #F0F0F0;
     --color-medium-gray: #666666;
     --color-dark-gray: #333333;
-    --color-accent: #6A8EFB; /* Bleu clair apaisant */
-    --color-accent-dark: #557CD9; /* Nuance plus foncée de l'accent */
-    --color-donate-pink: #FF69B4; /* Rose vif */
-    --color-donate-pink-dark: #E05CA1; /* Nuance plus foncée du rose */
+    --color-accent: #6A8EFB;
+    --color-accent-dark: #557CD9;
+    --color-donate-pink: #FF69B4;
+    --color-donate-pink-dark: #E05CA1;
     --color-text-light: #999999;
 }
 
-/* General Body and Font Styles */
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -31,7 +30,6 @@ a {
     text-decoration: none;
 }
 
-/* --- En-tête Global --- */
 .main-header {
     background-color: var(--color-white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -44,7 +42,7 @@ a {
 .header-content {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aligne verticalement tous les éléments */
+    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -63,7 +61,7 @@ a {
 
 .main-nav ul {
     display: flex;
-    align-items: center; /* Assure l'alignement vertical des éléments de la nav */
+    align-items: center;
     gap: 30px;
     margin: 0px;
     list-style: none;
@@ -73,17 +71,31 @@ a {
     color: var(--color-medium-gray);
     font-size: 17px;
     transition: color 0.2s ease;
-    padding: 5px 0; /* Pour une meilleure zone de clic */
+    padding: 5px 0;
     position: relative;
-    white-space: nowrap; /* Empêche le retour à la ligne des liens */
+    white-space: nowrap;
     text-decoration: none;
 }
 
 .main-nav a:hover {
     color: var(--color-accent);
 }
-
-/* Pas de soulignement pour les boutons */
+.header-content .logo-subtitle {
+    font-size: 16px;
+    color: #bbb;
+}
+.header-content .header-logo {
+    display: flex;
+    align-items: baseline;
+}
+.header-content .logo-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-black);
+    text-decoration: none;
+    margin-right: 10px;
+}
 .main-nav a:not(.btn-donate)::after {
     content: '';
     position: absolute;
@@ -99,10 +111,9 @@ a {
     width: 100%;
 }
 
-/* Style spécifique pour le bouton de DON dans la topbar */
 .btn-donate {
     background-color: var(--color-donate-pink);
-    color: var(--color-white) !important; /* Assure que le texte est blanc */
+    color: var(--color-white) !important;
     padding: 5px 15px !important;
     border: none;
     border-radius: 8px;
@@ -118,10 +129,11 @@ a {
 .btn-donate:hover {
     background-color: var(--color-donate-pink-dark);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Ombre avec la couleur rose */
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
 }
-
-/* Main Layout for Content and Sidebar */
+ul {
+    list-style: none;
+}
 .container {
     display: flex;
     max-width: 1200px;
@@ -129,17 +141,16 @@ a {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* Clear floats */
+    overflow: hidden;
 }
 
-/* Sidebar desktop */
 .sidebar {
     width: 280px;
     background-color: #f8f8f8;
     padding: 30px 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
     flex-shrink: 0;
-    transition: transform 0.3s ease-in-out; /* Pour l’animation mobile */
+    transition: transform 0.3s ease-in-out;
     z-index: 1000;
 }
 
@@ -186,9 +197,8 @@ a {
     color: #888;
 }
 
-/* Main Content Area */
 .content-area {
-    flex-grow: 1; /* Allow content to take remaining space */
+    flex-grow: 1;
     padding: 30px;
 }
 
@@ -196,6 +206,7 @@ a {
     margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
+    scroll-margin-top: calc(var(--main-header-height, 75px) + 20px);
 }
 
 .content-section:last-child {
@@ -247,7 +258,7 @@ code {
     border-radius: 3px;
     font-family: 'Courier New', Courier, monospace;
 }
-/* --- Footer --- */
+
 .main-footer {
     background-color: var(--color-dark-gray);
     color: var(--color-text-light);
@@ -312,30 +323,31 @@ code {
     font-size: 14px;
 }
 @media (max-width: 992px) {
-    /* Masquer la nav principale pour afficher le burger */
     .main-nav {
         display: none;
     }
-    /* Sidebar mobile unifié */
     nav.sidebar {
         position: fixed;
         top: 0;
         left: 0;
-        width: 280px;           /* on fixe la largeur */
-        height: 100%;           /* plein écran vertical */
+        width: 280px;
+        height: 100%;
         overflow-y: auto;
-        padding-top: 70px;      /* pour laisser la place à la topbar */
+        padding-top: 90px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
         background-color: var(--color-light-gray);
         z-index: 1001;
-        transform: translateX(-100%);   /* décalée hors-écran à gauche */
+        transform: translateX(-100%);
         transition: transform 0.3s ease-in-out;
     }
     nav.sidebar.active {
-        transform: translateX(0);       /* remise en place quand active */
+        transform: translateX(0);
+        padding-top: 90px;
     }
-
-    /* Afficher le bouton hamburger */
+    .header-content .header-logo {
+        width: 100%;
+        justify-content: center;
+    }
     .hamburger-menu {
         display: block;
         background: none;
@@ -346,31 +358,27 @@ code {
         padding: 5px;
     }
 
-    /* Sidebar desktop (aside) - Cacher celle-ci sur mobile */
-    aside.sidebar { /* Cible spécifiquement l'élément aside avec la classe sidebar */
+    aside.sidebar {
         display: none;
     }
 
-    /* Sidebar mobile (nav.sidebar) - Initialement hors-écran à gauche */
-    nav.sidebar { /* Cible la nav avec la classe sidebar et l'ID sidebar */
+    nav.sidebar {
         position: fixed;
         top: 0;
-        left: -280px; /* Position initiale cachée */
+        left: -280px;
         height: 100%;
         overflow-y: auto;
-        padding-top: 70px; /* Laisse de la place pour la topbar */
+        padding-top: 70px;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
         background-color: #f8f8f8;
         z-index: 1000;
         transition: transform 0.3s ease-in-out;
     }
 
-    /* Quand la sidebar mobile est active (ouverte) */
     nav.sidebar.active {
-        transform: translateX(280px); /* Déplace pour la rendre visible */
+        transform: translateX(280px);
     }
 
-    /* Overlay (fond semi-transparent) */
     .overlay {
         position: fixed;
         top: 0;
@@ -379,13 +387,12 @@ code {
         height: 100%;
         background: rgba(0,0,0,0.5);
         z-index: 999;
-        display: none; /* Initialement caché */
+        display: none;
     }
     .overlay.active {
-        display: block; /* Visible quand actif */
+        display: block;
     }
 
-    /* Ajustements de layout pour le conteneur principal */
     .container {
         flex-direction: column;
         margin: 10px;
@@ -393,17 +400,16 @@ code {
     }
 }
 
-/* Desktop: masquer burger, overlay et sidebar mobile (nav) */
 @media (min-width: 993px) {
     .hamburger-menu,
-    nav.sidebar, /* Masque la sidebar mobile sur desktop */
+    nav.sidebar,
     .overlay {
         display: none;
     }
     .main-nav {
-        display: block; /* Affiche la navigation principale sur desktop */
+        display: block;
     }
-    aside.sidebar { /* S'assure que la sidebar desktop (aside) est visible sur desktop */
-        display: block; /* Ou display: flex; si c'est un flex container */
+    aside.sidebar {
+        display: block;
     }
 }
