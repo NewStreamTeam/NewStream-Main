@@ -226,7 +226,7 @@ section h2 {
     justify-content: space-between;
     text-align: left;
     gap: 50px;
-    padding: 100px 0;
+    padding: 70px 0;
     min-height: calc(100vh - 100px);
 }
 
@@ -247,32 +247,40 @@ section h2 {
     max-width: 600px;
 }
 
+.hero {
+  perspective: 1200px;
+}
+
 .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  will-change: opacity, transform;
 }
 
 .hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  transform-origin: center center;
 }
+
 .hero-image.animate {
-    animation: heroImageEntrance 1.5s ease-out forwards;
-    opacity: 0;
+  animation: heroImageEntrance 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 @keyframes heroImageEntrance {
-    from {
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(70px) scale(0.85) rotateY(90deg) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateY(0deg) rotateX(0deg);
+  }
 }
 
 .section-intro,
