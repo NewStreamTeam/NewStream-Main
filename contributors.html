@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Topbar identique à index.html -->
     <header class="main-header">
         <div class="header-content">
-            <a href="index.html" class="logo">FairPlay</a>
+            <div class="header-logo">
+                <a href="index.html" class="logo-link">FairPlay</a>
+                <span class="logo-subtitle">for Contributors</span>
+            </div>
             <button class="hamburger-menu" aria-label="Open menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -29,7 +31,7 @@
         </div>
     </header>
 
-    <!-- Mobile sidebar et overlay -->
+    <!-- Mobile sidebar and overlay -->
     <nav class="sidebar" id="sidebar">
         <button class="close-sidebar" aria-label="Close menu">
             <i class="fas fa-times"></i>
@@ -57,9 +59,9 @@
                             <li><a href="#code-structure"><i class="fas fa-sitemap"></i> Code Structure</a></li>
                             <li><a href="#git-workflow"><i class="fas fa-code-branch"></i> Git Workflow</a></li>
                             <li><a href="#testing"><i class="fas fa-vial"></i> Tests</a></li>
-                            <li><a href="#api"><i class="fas fa-cloud"></i> API</a></li>
                         </ul>
                     </li>
+                    <li><a href="#api-docs"><i class="fas fa-cloud"></i> API</a></li>
                     <li>
                         <a href="#non-dev-contributions"><i class="fas fa-handshake"></i> Contributions (Others)</a>
                         <ul>
@@ -71,7 +73,6 @@
                             <li><a href="#promotion"><i class="fas fa-share-alt"></i> Promotion</a></li>
                         </ul>
                     </li>
-                    <li><a href="#code-of-conduct"><i class="fas fa-gavel"></i> Code of Conduct</a></li>
                     <li><a href="#resources"><i class="fas fa-external-link-alt"></i> Useful Resources</a></li>
                     <li><a href="#license"><i class="fas fa-file-contract"></i> Project License</a></li>
                 </ul>
@@ -177,7 +178,9 @@ yarn dev</code></pre>
 # or
 yarn test</code></pre>
                 <p>Good code coverage is essential for FairPlay's stability. Make sure all tests pass before submitting a PR.</p>
-                <h3 id="api">API</h3>
+            </section>
+            <section id="api-docs" class="content-section">
+                <h2>Our API</h2>
                 <p>You can use our API for free</p>
                 <p>To access the API, you can use the following endpoints:</p>
                 <p><code>/api/v1/videos</code> To access at every single videos on en db, including : Title, link, description, notation...</p>
@@ -186,7 +189,6 @@ yarn test</code></pre>
                 <p><code>/api/v1/register</code> To register a new account, you need to provide your email, password and pseudo.</p>
                 <p>More endpoints are gonna be added and improved soon.</p>
             </section>
-
             <section id="non-dev-contributions" class="content-section">
                 <h2>Contributions (Non-Developers)</h2>
                 <p>Not a coder? No problem! There are many ways to contribute to FairPlay's success.</p>
@@ -210,21 +212,14 @@ yarn test</code></pre>
                 <p>Spread the word about FairPlay! Share our project on social media, tell your friends, or write an article. Any form of promotion helps FairPlay reach a wider audience and find new contributors. Don't hesitate to contact us if you have ideas for partnerships or events.</p>
             </section>
 
-            <section id="code-of-conduct" class="content-section">
-                <h2>Code of Conduct</h2>
-                <p>FairPlay is committed to providing a welcoming and inclusive environment for everyone, regardless of experience, gender, sexual orientation, disability, personal appearance, race, ethnicity, religion, or nationality.</p>
-                <p>We expect all contributors to show respect, courtesy, and open-mindedness. Harassing, discriminatory, or disrespectful behavior will not be tolerated. Discussions on political and religious topics, as well as the spread of misinformation, are strictly prohibited to maintain an environment focused on relevant and entertaining content.</p>
-                <p>If you observe inappropriate behavior, please report it immediately to <a href="mailto:contact.newstreamteam@gmail.com">contact.newstreamteam@gmail.com</a>.</p>
-            </section>
-
             <section id="resources" class="content-section">
                 <h2>Useful Resources</h2>
                 <p>Here are some essential links to help you on your contribution journey:</p>
                 <ul>
                     <li><i class="fab fa-github"></i> <a href="https://github.com/NewStreamTeam/NewStream-Website/" target="_blank">Official GitHub Repositories</a></li>
-                    <li><i class="fas fa-book-open"></i> <a href="#">API Documentation (Coming Soon)</a></li>
+                    <li><i class="fas fa-book-open"></i> <a href="contributors.html#api">API Documentation</a></li>
                     <li><i class="fab fa-discord"></i> <a href="https://discord.gg/AZBwM6u9Kr">Join our Community Discord server</a></li>
-                    <li><i class="fas fa-question-circle"></i> <a href="#">FAQ for Contributors</a></li>
+                    <li><i class="fas fa-question-circle"></i> <a href="cgu.html#faq">FAQ for Contributors</a></li>
                 </ul>
             </section>
 
@@ -239,10 +234,10 @@ yarn test</code></pre>
         <div class="footer-content">
             <div class="footer-logo">FairPlay</div>
             <div class="footer-links">
-                <a href="#">Terms of Use</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Code of Conduct</a>
-                <a href="#">FAQ</a>
+                <a href="cgu.html">Terms of Use</a>
+                <a href="cgu.html#privacy-policy">Privacy Policy</a>
+                <a href="cgu.html#conduct">Code of Conduct</a>
+                <a href="cgu.html#faq">FAQ</a>
             </div>
             <div class="social-links">
                 <a href="https://github.com/NewStreamTeam/"><i class="fab fa-github"></i></a>
