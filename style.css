@@ -1,13 +1,12 @@
-/* Variables de Couleurs */
 :root {
     --color-white: #FFFFFF;
     --color-light-gray: #F0F0F0;
     --color-medium-gray: #666666;
     --color-dark-gray: #333333;
-    --color-accent: #6A8EFB; /* Bleu clair apaisant */
-    --color-accent-dark: #557CD9; /* Nuance plus foncée de l'accent */
-    --color-donate-pink: #FF69B4; /* Rose vif */
-    --color-donate-pink-dark: #E05CA1; /* Nuance plus foncée du rose */
+    --color-accent: #6A8EFB;
+    --color-accent-dark: #557CD9;
+    --color-donate-pink: #FF69B4;
+    --color-donate-pink-dark: #E05CA1;
     --color-text-light: #999999;
 }
 
@@ -19,7 +18,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Pour la navigation fluide */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -124,7 +123,7 @@ b, strong {
 .header-content {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aligne verticalement tous les éléments */
+    align-items: center;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -143,7 +142,7 @@ b, strong {
 
 .main-nav ul {
     display: flex;
-    align-items: center; /* Assure l'alignement vertical des éléments de la nav */
+    align-items: center;
     gap: 30px;
 }
 
@@ -151,16 +150,15 @@ b, strong {
     color: var(--color-medium-gray);
     font-size: 17px;
     transition: color 0.2s ease;
-    padding: 5px 0; /* Pour une meilleure zone de clic */
+    padding: 5px 0;
     position: relative;
-    white-space: nowrap; /* Empêche le retour à la ligne des liens */
+    white-space: nowrap;
 }
 
 .main-nav a:hover {
     color: var(--color-accent);
 }
 
-/* Pas de soulignement pour les boutons */
 .main-nav a:not(.btn-donate)::after {
     content: '';
     position: absolute;
@@ -176,10 +174,9 @@ b, strong {
     width: 100%;
 }
 
-/* Style spécifique pour le bouton de DON dans la topbar */
 .btn-donate {
     background-color: var(--color-donate-pink);
-    color: var(--color-white) !important; /* Assure que le texte est blanc */
+    color: var(--color-white) !important;
     padding: 5px 15px !important;
     border: none;
     border-radius: 8px;
@@ -195,10 +192,10 @@ b, strong {
 .btn-donate:hover {
     background-color: var(--color-donate-pink-dark);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Ombre avec la couleur rose */
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
 }
 
-.btn-donate.large { /* Style pour le bouton de don dans la section support */
+.btn-donate.large {
     padding: 15px 35px!important;
     font-size: 18px;
 }
@@ -214,6 +211,7 @@ b, strong {
 section {
     padding: 80px 0;
     text-align: center;
+    scroll-margin-top: calc(var(--main-header-height, 75px) + 40px);
 }
 
 section h2 {
@@ -229,7 +227,7 @@ section h2 {
     text-align: left;
     gap: 50px;
     padding: 100px 0;
-    min-height: calc(100vh - 100px); /* Prend presque toute la hauteur visible */
+    min-height: calc(100vh - 100px);
 }
 
 .hero-text {
@@ -261,7 +259,6 @@ section h2 {
     border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
-/* Animation pour l'image de l'héro */
 .hero-image.animate {
     animation: heroImageEntrance 1.5s ease-out forwards;
     opacity: 0;
@@ -278,7 +275,6 @@ section h2 {
     }
 }
 
-/* Styles pour les sections avec fade-in */
 .section-intro,
 .section-features,
 .section-extension,
@@ -286,9 +282,9 @@ section h2 {
 .section-community,
 .section-support,
 .section-cta {
-    opacity: 0; /* Initialement caché */
-    transform: translateY(20px); /* Légèrement décalé vers le bas */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Ajoute la transition ici */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .section-visible {
@@ -438,7 +434,7 @@ section h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Pour la réactivité */
+    flex-wrap: wrap;
 }
 
 .development-links .btn-secondary {
@@ -493,7 +489,7 @@ section h2 {
 /* --- Nouvelle Section Soutien/Don --- */
 .section-support {
     padding: 60px 0;
-    background-color: var(--color-white); /* Assurez-vous que le fond est blanc ou une autre couleur qui contraste bien */
+    background-color: var(--color-white);
     border-radius: 15px;
     margin-bottom: 80px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
@@ -641,7 +637,7 @@ section h2 {
         margin-bottom: 30px;
     }
     .extension-text ul {
-        align-items: flex-start; /* Réaligne les puces à gauche si le texte est centré */
+        align-items: flex-start;
         max-width: 500px;
         margin: 0 auto 35px auto;
     }
@@ -651,14 +647,12 @@ section h2 {
     .main-header {
         padding: 15px 20px;
     }
-    /* Hide the regular nav on smaller screens */
     .main-nav {
         display: none;
     }
 
-    /* Show hamburger menu */
     .hamburger-menu {
-        display: block; /* Make sure it's visible */
+        display: block;
         background: none;
         border: none;
         font-size: 28px;
@@ -671,11 +665,10 @@ section h2 {
         color: var(--color-accent);
     }
 
-    /* Adjust header content for hamburger */
     .header-content {
-        justify-content: space-between; /* Keep logo and hamburger apart */
+        justify-content: space-between;
         align-items: center;
-        flex-direction: row; /* Ensure it stays a row */
+        flex-direction: row;
     }
 
     section {
@@ -709,7 +702,7 @@ section h2 {
         align-items: center;
     }
     .development-links .btn-secondary {
-        width: 80%; /* Occupe plus d'espace sur mobile */
+        width: 80%;
         max-width: 400px;
     }
     .footer-content {
@@ -722,17 +715,16 @@ section h2 {
     }
 }
 
-/* Sidebar styles */
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Hidden by default, off-screen to the right */
+    right: -300px;
     width: 300px;
     height: 100%;
     background-color: var(--color-dark-gray);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
-    z-index: 1001; /* Higher than header */
+    z-index: 1001;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -740,7 +732,7 @@ section h2 {
 }
 
 .sidebar.open {
-    right: 0; /* Slide in */
+    right: 0;
 }
 
 .sidebar ul {
@@ -772,7 +764,7 @@ section h2 {
 .sidebar .btn-donate {
     width: 100%;
     margin-top: 20px;
-    padding: 12px 15px !important; /* Adjust padding for sidebar button */
+    padding: 12px 15px !important;
     font-size: 18px;
     text-align: center;
 }
@@ -783,7 +775,7 @@ section h2 {
     font-size: 30px;
     color: var(--color-white);
     cursor: pointer;
-    align-self: flex-end; /* Align to the top right */
+    align-self: flex-end;
     padding: 10px;
 }
 
@@ -791,7 +783,6 @@ section h2 {
     color: var(--color-accent);
 }
 
-/* Overlay for when sidebar is open */
 .overlay {
     position: fixed;
     top: 0;
@@ -799,22 +790,21 @@ section h2 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Just below sidebar */
-    display: none; /* Hidden by default */
+    z-index: 1000;
+    display: none;
 }
 
 .overlay.active {
-    display: block; /* Show when sidebar is open */
+    display: block;
 }
 
 
 @media (min-width: 993px) {
-    /* Hide hamburger and sidebar on larger screens */
     .hamburger-menu, .sidebar, .overlay {
         display: none;
     }
     .main-nav {
-        display: block; /* Show the regular nav */
+        display: block;
     }
 }
 
@@ -898,7 +888,7 @@ section h2 {
     section h2 {
         font-size: 26px;
     }
-    .btn-primary, .btn-secondary, .btn-primary.large, .btn-secondary.large, .btn-donate { /* Le btn-donate est inclus ici */
+    .btn-primary, .btn-secondary, .btn-primary.large, .btn-secondary.large, .btn-donate {
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
@@ -908,51 +898,39 @@ section h2 {
         max-width: 300px;
     }
     .sidebar {
-        width: 250px; /* Smaller sidebar for very small screens */
+        width: 250px;
     }
 }
 
 .video-card-container {
-    /* How to modify the perspective angle: */
-    /* Adjusting this value changes how strong the 3D perspective effect is. */
-    /* A smaller value (e.g., 500px) will make the perspective more pronounced (objects closer to the viewer look larger). */
-    /* A larger value (e.g., 2000px) will make the perspective less pronounced (objects appear flatter, more orthographic). */
     perspective: 1000px;
 }
 
 .video-card-3d-effect {
     transform-style: preserve-3d;
+    transform: rotateX(10deg) rotateY(-40deg) rotateZ(5deg);
 
-    /* How to modify the tilt angles: */
-    /* 'rotateX()' rotates around the horizontal axis (tilts the top/bottom). */
-    /* 'rotateY()' rotates around the vertical axis (tilts the left/right). */
-    /* Positive values for rotateX will tilt the top away from you, bottom towards you. */
-    /* Negative values for rotateX will tilt the top towards you, bottom away from you. */
-    /* Positive values for rotateY will tilt the right side away from you, left side towards you. */
-    /* Negative values for rotateY will tilt the left side away from you, right side towards you. */
-    transform: rotateX(10deg) rotateY(-40deg) rotateZ(5deg); /* Adjust for desired 3D angle */
-
-    transition: transform 0.3s ease; /* Smooth transition on hover if you add it later */
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    border-radius: 15px; /* Rounded corners for the entire card */
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
     position: relative;
-    background-color: #fff; /* Base color for the card */
+    background-color: #fff;
 }
 
 .video-card {
     background-color: #fff;
     border-radius: 15px;
     overflow: hidden;
-    width: 380px; /* Adjust as needed */
+    width: 380px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 14px, #6a8efb 32px 18px 0px -9px;
     position: relative;
-    z-index: 1; /* Ensure content is above any potential background elements */
+    z-index: 1;
 }
 
 .video-player-placeholder {
     width: 100%;
-    height: 220px; /* Aspect ratio for video, adjust as needed */
-    background-color: #000; /* Black placeholder for the video player */
+    height: 220px;
+    background-color: #000;
     border-bottom: 1px solid #eee;
 }
 
@@ -981,7 +959,7 @@ section h2 {
     line-height: 1.5;
     margin-bottom: 15px;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
