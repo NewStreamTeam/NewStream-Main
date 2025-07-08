@@ -1,51 +1,96 @@
-// contributors.js
 document.addEventListener('DOMContentLoaded', () => {
-    // **1. Smooth scrolling & mise à jour des liens actifs (votre code existant)**
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    const mainHeader = document.querySelector('.main-header');
+    let headerHeight = 0;
+
+    const updateHeaderHeight = () => {
+        headerHeight = 75;
+    };
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+
+    const scrollToTarget = (targetElement, behavior = 'smooth') => {
+        if (targetElement) {
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight; 
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: behavior
+            });
+        }
+    };
+
+    document.querySelectorAll('.main-nav a[href^="#"], .sidebar a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetEl = document.querySelector(targetId);
-            const headerOffset = document.querySelector('.main-header').offsetHeight;
-            const elementPos = targetEl.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPos = elementPos - headerOffset - 20;
-            window.scrollTo({ top: offsetPos, behavior: 'smooth' });
+            
+            scrollToTarget(targetEl, 'smooth');
+            
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            if (sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     });
 
     const contentSections = document.querySelectorAll('.content-section');
-    const headerOffset = document.querySelector('.main-header').offsetHeight;
     const updateActiveLink = () => {
         let current = '';
         contentSections.forEach(sec => {
             const rect = sec.getBoundingClientRect();
-            if (rect.top <= headerOffset + 50 && rect.bottom >= headerOffset + 50) {
+            if (rect.top <= headerHeight + 5 && rect.bottom >= headerHeight + 5) { 
                 current = sec.id;
             }
         });
+
         document.querySelectorAll('#sidebar-menu li a').forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+            link.classList.remove('active');
         });
+        const currentLink = document.querySelector(`#sidebar-menu li a[href="#${current}"]`);
+        if (currentLink) {
+            currentLink.classList.add('active');
+        }
     };
     window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
+    updateActiveLink(); 
 
-    // **2. Toggle mobile sidebar + overlay**
-    const hamburger = document.querySelector('.hamburger-menu');
-    const mobileSidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.querySelector('.close-sidebar');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const closeSidebarBtn = document.querySelector('.close-sidebar');
 
-    hamburger.addEventListener('click', () => {
-        mobileSidebar.classList.add('active');
+    function openSidebar() {
+        sidebar.classList.add('open');
         overlay.classList.add('active');
-    });
-    closeBtn.addEventListener('click', () => {
-        mobileSidebar.classList.remove('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('open');
         overlay.classList.remove('active');
-    });
-    overlay.addEventListener('click', () => {
-        mobileSidebar.classList.remove('active');
-        overlay.classList.remove('active');
-    });
+        document.body.style.overflow = '';
+    }
+
+    hamburgerMenu.addEventListener('click', openSidebar);
+    closeSidebarBtn.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+    if (window.location.hash) {
+        const targetId = window.location.hash;
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            document.documentElement.style.scrollBehavior = 'auto';
+            
+            scrollToTarget(targetElement, 'auto');
+
+            setTimeout(() => {
+                document.documentElement.style.scrollBehavior = 'smooth';
+                updateActiveLink(); 
+            }, 50);
+        }
+    }
 });
