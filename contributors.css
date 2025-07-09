@@ -329,7 +329,7 @@ code {
     nav.sidebar {
         position: fixed;
         top: 0;
-        left: 0;
+        left: -320px;
         width: 280px;
         height: 100%;
         overflow-y: auto;
@@ -337,12 +337,11 @@ code {
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
         background-color: var(--color-light-gray);
         z-index: 1001;
-        transform: translateX(-100%);
+        transform: translateX(0%);
         transition: transform 0.3s ease-in-out;
     }
-    nav.sidebar.active {
-        transform: translateX(0);
-        padding-top: 90px;
+    nav.sidebar.open {
+        transform: translateX(100%);
     }
     .header-content .header-logo {
         width: 100%;
@@ -360,23 +359,6 @@ code {
 
     aside.sidebar {
         display: none;
-    }
-
-    nav.sidebar {
-        position: fixed;
-        top: 0;
-        left: -280px;
-        height: 100%;
-        overflow-y: auto;
-        padding-top: 70px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
-        background-color: #f8f8f8;
-        z-index: 1000;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    nav.sidebar.active {
-        transform: translateX(280px);
     }
 
     .overlay {
