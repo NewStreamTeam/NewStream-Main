@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const closeSidebarBtn = document.querySelector('.close-sidebar');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
 
     function openSidebar() {
         sidebar.classList.add('open');
