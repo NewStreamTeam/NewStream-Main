@@ -56,6 +56,19 @@ b, strong {
     color: var(--color-dark-gray);
 }
 
+.seo-footer-text {
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 0px;
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.seo-footer-text strong {
+    color: #8b8b8b;
+}
 /* --- Boutons Génériques --- */
 .btn-primary {
     background-color: var(--color-accent);
