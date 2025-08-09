@@ -58,9 +58,7 @@
                         <a href="#development-setup"><i class="fas fa-code"></i> Development</a>
                         <ul>
                             <li><a href="#env-setup"><i class="fas fa-laptop-code"></i> Environment</a></li>
-                            <li><a href="#code-structure"><i class="fas fa-sitemap"></i> Code Structure</a></li>
                             <li><a href="#git-workflow"><i class="fas fa-code-branch"></i> Git Workflow</a></li>
-                            <li><a href="#testing"><i class="fas fa-vial"></i> Tests</a></li>
                         </ul>
                     </li>
                     <li><a href="#api-docs"><i class="fas fa-cloud"></i> API</a></li>
@@ -114,50 +112,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY</code></pre>
 # or
 yarn dev</code></pre>
                 <p>The application will be accessible at <code>http://localhost:3000</code>.</p>
-
-                <h3 id="code-structure">Code Structure</h3>
-                <p>The FairPlay project is a <b>Next.js</b> application in <b>TypeScript</b>, using <b>Supabase</b> for the database and <b>Tailwind CSS</b> for styling. Here is the file and folder organization:</p>
-                <pre><code>
-/   # Project Root
-├── README.md
-├── package.json            # Dependencies and NPM scripts
-├── next.config.ts          # Next.js configuration
-├── tailwind.config.js      # Tailwind CSS customization
-├── tsconfig.json           # TypeScript options
-├── public/                 # Static files (icons, images…)
-├── lib/
-│   └── supabase.ts         # Supabase client initialization (server-side)
-└── src/
-    ├── components/         # Reusable React components
-    │   ├── Layout.tsx
-    │   ├── UploadModal.tsx
-    │   ├── UserMenu.tsx
-    │   └── icons.tsx
-    ├── lib/                # Application-side utilities
-    │   ├── supabase.ts     # Supabase client for the frontend
-    │   ├── publicApi.ts    # API key verification and rate-limiting
-    │   ├── recommend.ts    # Video recommendation logic
-    │   └── utils.ts        # Helper functions
-    ├── pages/              # File-based routes
-    │   ├── api/            # Internal and public endpoints
-    │   │   ├── index.ts
-    │   │   ├── login.ts
-    │   │   ├── register.ts
-    │   │   ├── videos.ts
-    │   │   ├── videos/[id].ts
-    │   │   └── v1/         # Public API (/api/v1)
-    │   │       ├── index.ts
-    │   │       ├── login.ts
-    │   │       ├── register.ts
-    │   │       ├── videos.ts
-    │   │       └── videos/[id].ts
-    │   ├── login.tsx       # Authentication form
-    │   ├── upload.tsx      # Video upload
-    │   ├── videos.tsx      # Video list
-    │   └── video/[id].tsx  # Video details
-    └── types.ts            # Shared TypeScript types
-
-</code></pre>
+                
                 <h3 id="git-workflow">Contribution Process (Git Workflow)</h3>
                 <p>We use a workflow based on feature branches and Pull Requests (PRs):</p>
                 <ol>
@@ -169,22 +124,12 @@ yarn dev</code></pre>
                     <li>Open a <b>Pull Request (PR)</b> on the main FairPlay repository. Describe the changes precisely, solved issues, and include screenshots if relevant.</li>
                     <li>Respond to comments during the <b>code review</b> and make necessary modifications.</li>
                 </ol>
-
-                <h3 id="testing">Tests</h3>
-                <p>Each new feature or bug fix must be accompanied by relevant tests. We use <b>Jest</b> and <b>React Testing Library</b> for unit and integration testing of components and functions. To run the tests:</p>
-                <pre><code>npm test
-# or
-yarn test</code></pre>
-                <p>Good code coverage is essential for FairPlay's stability. Make sure all tests pass before submitting a PR.</p>
             </section>
             <section id="api-docs" class="content-section">
                 <h2>Our API</h2>
                 <p>You can use our API for free</p>
                 <p>To access the API, you can use the following endpoints:</p>
                 <p><code>/api/v1/videos</code> To access at every single videos on en db, including : Title, link, description, notation...</p>
-                <p><code>/api/v1/videos/{id}</code> To access a specific video by its ID, including : Title, link, description, notation...</p>
-                <p><code>/api/v1/login</code> To login to your account, you need to provide your email and password.</p>
-                <p><code>/api/v1/register</code> To register a new account, you need to provide your email, password and pseudo.</p>
                 <p>More endpoints are gonna be added and improved soon.</p>
             </section>
             <section id="non-dev-contributions" class="content-section">
@@ -248,3 +193,4 @@ yarn test</code></pre>
     <script src="contributors.js"></script>
 </body>
 </html>
+
